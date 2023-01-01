@@ -7,19 +7,13 @@ public_folder: /img
 # publish_mode: editorial_workflow
 
 collections:
-
-  -name: "projects"
+  - name: "projects"
     label: "Projects"
-    folder: "content/projects"
+    folder: "/content/projects"
     create: true
-    slug: "{{slug}}"
-    media_folder: ""
-    public_folder: ""
-    path: "{{title}}/index"
-    choose_url: true
-    editor:
-      preview: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" },
-      - { label: "cover", name: "cover", widget: "image" },
-      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Cover", name: "cover", widget: "image" }
