@@ -10,6 +10,5 @@ cover: https://images.ctfassets.net/vvuz0qpcznq0/54mKARwKbY3FMTpImfTWbz/d4c1a3ca
 url: https://ahmadullah.in/webrtc-videochat/
 source: https://github.com/aumirza/webrtc-videochat
 tech_stack:
-  - name: React
-    icon: react
+  - React
 ---
