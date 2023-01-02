@@ -7,4 +7,10 @@ description: Experience the convenience and intimacy of peer-to-peer video chat
   you're in different rooms or different countries, our app makes it easy to
   stay connected and communicate in real-time.
 cover: https://images.ctfassets.net/vvuz0qpcznq0/54mKARwKbY3FMTpImfTWbz/d4c1a3ca550e43178cf7924981db2efb/Best-Video-Chat-Apps.jpg
+url: https://ahmadullah.in/webrtc-videochat/
+source: https://github.com/aumirza/webrtc-videochat
+tech_stack:
+  - tech:
+      name: React
+      icon: "react "
 ---
