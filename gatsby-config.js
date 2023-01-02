@@ -16,6 +16,11 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    'gatsby-plugin-postcss',
+    `gatsby-plugin-netlify-cms`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,8 +28,32 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
+
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // {
+          //   resolve: `gatsby-remark-relative-images`,
+          // },
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: 1200,
+          //     withWebp: true,
+          //   },
+          // },
+        ],
+      },
+    },
+
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
@@ -39,16 +68,6 @@ module.exports = {
     //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        /**
-         * One convention is to place your Netlify CMS customization code in a
-         * `src/cms` directory.
-         */
-        // modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    'gatsby-plugin-postcss',
+
   ],
 }

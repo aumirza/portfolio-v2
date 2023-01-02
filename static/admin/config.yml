@@ -17,3 +17,30 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Cover", name: "cover", widget: "image" }
+      - {
+          label: "URL",
+          name: "url",
+          widget: "string",
+          pattern:
+            ["https?://(.*)", "The URL must start with http:// or https://"],
+          required: false,
+        }
+      - {
+          label: "Source",
+          name: "source",
+          widget: "string",
+          pattern:
+            ["https?://(.*)", "The URL must start with http:// or https://"],
+          required: false,
+        }
+      - {
+          label: "Tech Stack",
+          name: "tech_stack",
+          widget: "list",
+          required: false,
+          fields:
+            [
+              { label: "Name", name: "name", widget: "string" },
+              { label: "DevIcons Icon", name: "icon", widget: "string" },
+            ],
+        }

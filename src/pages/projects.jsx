@@ -4,27 +4,24 @@ import { Layout } from "../components/Layout"
 import { ProjectGridCard } from "../components/ProjectGridCard"
 
 const Projects = () => {
-  // const contentfulProjects = useStaticQuery(graphql`
-  //   query {
-  //     allContentfulProjects {
-  //       edges {
-  //         node {
-  //           id
-  //           title
-  //           description {
-  //             raw
-  //           }
-  //           cover {
-  //             gatsbyImageData
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
+  const data = useStaticQuery(graphql`
+    query ProjectSectionQuery {
+      allMarkdownRemark {
+        projects: edges {
+          node {
+            frontmatter {
+              title
+              date
+              cover
+              description
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  // const projects = contentfulProjects.allContentfulProjects.edges
-  const projects = []
+  const projects = data.allMarkdownRemark.projects
 
   return (
     <Layout className="pt-16">
@@ -34,7 +31,7 @@ const Projects = () => {
 
       <div className="max-w-6xl mx-auto grid grid-cols-3 gap-2 mb-10">
         {projects.map(edge => (
-          <ProjectGridCard key={edge.node.id} project={edge.node} />
+          <ProjectGridCard key={edge.node.id} project={edge.node.frontmatter} />
         ))}
       </div>
     </Layout>

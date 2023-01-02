@@ -3,28 +3,31 @@ import { graphql, useStaticQuery } from "gatsby"
 import { ProjectCard } from "../ProjectCard"
 
 export const ProjectSection = () => {
-  //   const contentfulProjects = useStaticQuery(graphql`
-  //     query {
-  //       allContentfulProjects {
-  //         edges {
-  //           node {
-  //             id
-  //             title
-  //             description {
-  //               raw
-  //             }
-  //             cover {
-  //               gatsbyImageData
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `);
+  const data = useStaticQuery(graphql`
+    query getProjectsData {
+      allMarkdownRemark {
+        projects: edges {
+          node {
+            id
+            frontmatter {
+              title
+              date
+              cover
+              description
+              source
+              url
+              tech_stack {
+                name
+                icon
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-  //   const projects = contentfulProjects.allContentfulProjects.edges.slice(0, 3);
-
-  const projects = []
+  const projects = data.allMarkdownRemark.projects
 
   return (
     <div className="flex flex-col items-center mt-20">
@@ -35,7 +38,11 @@ export const ProjectSection = () => {
       </div>
       <div className="w-11/12">
         {projects.map((edge, i) => (
-          <ProjectCard key={edge.node.id} rtl={i % 2} project={edge.node} />
+          <ProjectCard
+            key={edge.node.id}
+            rtl={i % 2}
+            project={edge.node.frontmatter}
+          />
         ))}
       </div>
       <div className="mt-10">

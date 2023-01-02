@@ -1,11 +1,11 @@
-import React from "react";
-import { FullSection } from "../FullSection";
-import Slider from "react-slick";
+import React from "react"
+import { FullSection } from "../FullSection"
+import Slider from "react-slick"
 
 // Import css files
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { TestimonialCard } from "../TestimonialCard";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import { TestimonialCard } from "../TestimonialCard"
 
 export const TestimonialSection = () => {
   return (
@@ -25,11 +25,11 @@ export const TestimonialSection = () => {
           slidesToShow={1.9}
           // slidesToScroll={3}
         >
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <TestimonialCard testimonial={{ text: item }} />
+          {[1, 2, 3, 4, 5, 6].map(item => (
+            <TestimonialCard key={item} testimonial={{ text: item }} />
           ))}
         </Slider>
       </div>
     </FullSection>
-  );
-};
+  )
+}
