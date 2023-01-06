@@ -1,4 +1,5 @@
 ---
+image: /img/about.png
 text: >-
   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis ducimus
   amet, harum aliquid in quas corporis quisquam **magnam voluptatem.
