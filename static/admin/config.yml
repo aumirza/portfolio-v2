@@ -116,7 +116,6 @@ collections:
       - label: "Home Page"
         name: "home_page"
         file: "/content/config/home_page.md"
-
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - {
@@ -125,6 +124,7 @@ collections:
               widget: "list",
               field: { label: "Text", name: "text", widget: "string" },
             }
+          - { label: "Resume", name: "resume", widget: "string" }
           - {
               label: "keywords",
               name: "keywords",
@@ -139,12 +139,37 @@ collections:
         name: "about_page"
         file: "/content/config/about_page.md"
         fields:
+          - { label: "Image", name: "image", widget: "image" }
           - { label: "Text", name: "text", widget: "markdown" }
           - {
               label: "key",
               name: "key",
               widget: "string",
               default: "aboutPage",
+            }
+
+      - label: "Hire Section"
+        name: "hire_section"
+        file: "/content/config/hire_section.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Button",
+              name: "button",
+              widget: "object",
+              fields:
+                [
+                  { label: "Text", name: "text", widget: "string" },
+                  { label: "Link", name: "link", widget: "string" },
+                ],
+            }
+          - { label: "Image", name: "image", widget: "image" }
+          - {
+              label: "key",
+              name: "key",
+              widget: "string",
+              default: "hireSection",
             }
 
       - label: "Contact Info"
@@ -154,8 +179,7 @@ collections:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Location", name: "location", widget: "string" }
-          - { label: "Website", name: "website", widget: "string" }
-          - { label: "Resume", name: "resume", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
           - {
               label: "key",
               name: "key",

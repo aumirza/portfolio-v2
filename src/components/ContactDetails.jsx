@@ -1,9 +1,33 @@
-import React from "react";
-import { AiOutlineMail } from "react-icons/ai";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { GoLocation } from "react-icons/go";
+import { graphql, useStaticQuery } from "gatsby"
+import React from "react"
+import { AiOutlineMail } from "react-icons/ai"
+import { BsFillTelephoneFill } from "react-icons/bs"
+import { GoLocation } from "react-icons/go"
 
 export const ContactDetails = () => {
+  const data = useStaticQuery(graphql`
+    query getContactDetails {
+      allMarkdownRemark(
+        filter: { frontmatter: { key: { eq: "contactInfo" } } }
+      ) {
+        edges {
+          node {
+            id
+            fields: frontmatter {
+              email
+              phone
+              location
+              address
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const { email, phone, location, address } =
+    data.allMarkdownRemark.edges[0].node.fields
+
   return (
     <div className="flex flex-col items-center">
       <h1 className="mb-5 text-2xl font-bold">Contact Info</h1>
@@ -13,7 +37,7 @@ export const ContactDetails = () => {
           <AiOutlineMail className="text-primary text-2xl mr-2" />
           <p className="text-lg">
             <a href="mailto:" className="text-primary">
-              mail@mail.com
+              {email}
             </a>
           </p>
         </div>
@@ -22,7 +46,7 @@ export const ContactDetails = () => {
           <BsFillTelephoneFill className="text-primary text-2xl mr-2" />
           <p className="text-lg">
             <a href="tel:" className="text-primary">
-              +123456789
+              {phone}
             </a>
           </p>
         </div>
@@ -31,14 +55,15 @@ export const ContactDetails = () => {
           <GoLocation className="text-primary text-2xl mr-2" />
           <p className="text-lg">
             <a
-              href="https://goo.gl/maps/8Q5Z9Z9Z9Z9Z9Z9Z9"
+              href={location}
               className="text-primary"
-            >
-              1234 Street, City, State, Country
-            </a>
+              dangerouslySetInnerHTML={{
+                __html: address.replace(/\n/g, "<br />"),
+              }}
+            ></a>
           </p>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

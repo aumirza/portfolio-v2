@@ -5,19 +5,25 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
 export const SocialVertical = () => {
   const data = useStaticQuery(graphql`
     query getSocialDetails {
-      allConfigYaml(filter: { key: { eq: "socialInfo" } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { key: { eq: "socialInfo" } } }
+      ) {
         edges {
-          fields: node {
-            twitter
-            github
-            linkedin
+          node {
+            id
+            fields: frontmatter {
+              github
+              twitter
+              linkedin
+            }
           }
         }
       }
     }
   `)
 
-  const { twitter, github, linkedin } = data.allConfigYaml.edges[0].fields
+  const { twitter, github, linkedin } =
+    data.allMarkdownRemark.edges[0].node.fields
   return (
     <div className="px-5">
       <a href={github}>

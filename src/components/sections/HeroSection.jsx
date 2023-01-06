@@ -2,21 +2,22 @@ import React from "react"
 import { FullSection } from "../FullSection"
 import { ScrollDownButton } from "../ScrollDownButton"
 import { SocialVertical } from "../SocialVertical"
-import ProfileImage from "../../images/profile-pic.png"
 import BlobImage from "../../images/blob.png"
 import { graphql, useStaticQuery } from "gatsby"
 
 export const HeroSection = () => {
   const data = useStaticQuery(graphql`
     query getHomePageDetails {
-      allConfigYaml(filter: { key: { eq: "homePage" } }) {
+      allMarkdownRemark(filter: { frontmatter: { key: { eq: "homePage" } } }) {
         edges {
-          fields: node {
+          node {
             id
-            title
-            subtitle
-            description
-            avatar
+            fields: frontmatter {
+              title
+              subtitle
+              description
+              avatar
+            }
           }
         }
       }
@@ -24,7 +25,7 @@ export const HeroSection = () => {
   `)
 
   const { title, subtitle, description, avatar } =
-    data.allConfigYaml.edges[0].fields
+    data.allMarkdownRemark.edges[0].node.fields
 
   return (
     <FullSection>
