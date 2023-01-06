@@ -6,7 +6,7 @@ export const ProjectGridCard = ({ project }) => {
 
   return (
     <div className="max-w-[20rem] p-2 border-primary border-2 bg-opacity-60 rounded-lg shadow-md hover:-translate-y-3 hover:shadow-xl flex flex-col items-center transition-all ease-in-out duration-500">
-      <div className="group h-52 w-[98%] flex justify-center items-center hover:bg-transparent bg-primary overflow-hidden">
+      <div className="group h-52 w-[98%] flex justify-center items-center hover:bg-transparent bg-secondary overflow-hidden">
         <img
           className="h-full object-cover rounded-md mix-blend-multiply group-hover:grayscale-0 group-hover:brightness-100 grayscale brightness-90"
           src={cover}
@@ -29,19 +29,20 @@ export const ProjectGridCard = ({ project }) => {
         </p>
       </div>
       <div className="mb-1 px-2 flex justify-between w-full">
-        <div className="flex justify-center items-center">
-          <FaGithub className="text-xl text-primary" />
-        </div>
-        <button className="border border-primary text-primary py-0.5 px-3 rounded-md">
-          <span className="text-base">View</span>
-        </button>
+        {project.source && (
+          <a href={project.source} target="_blank" rel="noreferrer">
+            <FaGithub className="text-xl text-secondary" />
+          </a>
+        )}
+        {project.url && (
+          <a
+            href={project.url}
+            className="border border-secondary text-secondary py-0.5 px-3 rounded-md"
+          >
+            <span className="text-base">View</span>
+          </a>
+        )}
       </div>
     </div>
   )
 }
-
-//   {/* {JSON.parse(project.description.raw).content.map((node) =>
-//     node.nodeType === "descriptiongraph" ? (
-//       <p>{node.content[0].value}</p>
-//     ) : null
-//   )} */}

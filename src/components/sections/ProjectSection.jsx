@@ -1,34 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { useProjectsQuery } from "../../hooks/useProjectsQuery"
 import { ProjectCard } from "../ProjectCard"
 
 export const ProjectSection = () => {
-  const data = useStaticQuery(graphql`
-    query getProjectsData {
-      allMarkdownRemark {
-        projects: edges {
-          node {
-            id
-            frontmatter {
-              title
-              date
-              cover
-              description
-              source
-              url
-              tech_stack {
-                name
-                icon
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const projects = data.allMarkdownRemark.projects
-
+  const projects = useProjectsQuery()
   return (
     <div className="flex flex-col items-center mt-20">
       <div>
@@ -39,9 +14,9 @@ export const ProjectSection = () => {
       <div className="w-11/12">
         {projects.map((edge, i) => (
           <ProjectCard
-            key={edge.node.id}
+            key={edge.project.id}
             rtl={i % 2}
-            project={edge.node.frontmatter}
+            project={edge.project.fields}
           />
         ))}
       </div>

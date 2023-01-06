@@ -1,27 +1,10 @@
-import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { Layout } from "../components/Layout"
 import { ProjectGridCard } from "../components/ProjectGridCard"
+import { useProjectsQuery } from "../hooks/useProjectsQuery"
 
 const Projects = () => {
-  const data = useStaticQuery(graphql`
-    query ProjectSectionQuery {
-      allMarkdownRemark {
-        projects: edges {
-          node {
-            frontmatter {
-              title
-              date
-              cover
-              description
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const projects = data.allMarkdownRemark.projects
+  const projects = useProjectsQuery()
 
   return (
     <Layout className="pt-16">
@@ -31,7 +14,10 @@ const Projects = () => {
 
       <div className="max-w-6xl mx-auto grid grid-cols-3 gap-2 mb-10">
         {projects.map(edge => (
-          <ProjectGridCard key={edge.node.id} project={edge.node.frontmatter} />
+          <ProjectGridCard
+            key={edge.project.id}
+            project={edge.project.fields}
+          />
         ))}
       </div>
     </Layout>

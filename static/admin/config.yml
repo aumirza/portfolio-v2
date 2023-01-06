@@ -36,11 +36,155 @@ collections:
       - {
           label: "Tech Stack",
           name: "tech_stack",
-          widget: "list",
-          required: false,
-          fields:
-            [
-              { label: "Name", name: "name", widget: "string" },
-              { label: "DevIcons Icon", name: "icon", widget: "string" },
-            ],
+          widget: "relation",
+          collection: "skills",
+          searchFields: ["name"],
+          valueField: "name",
+          multiple: true,
+          displayFields: ["name"],
         }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "/content/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: false }
+      - { label: "Company", name: "company", widget: "string", required: false }
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Avatar", name: "avatar", widget: "image", required: false }
+
+  - name: "skill_groups"
+    label: "Skill Groups"
+    folder: "/content/skill_groups"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+
+  - name: "skills"
+    label: "Skills"
+    folder: "/content/skills"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{name}}"
+    sortable_fields: ["type"]
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Icon", name: "icon", widget: "image" }
+      - {
+          label: "Type",
+          name: "type",
+          widget: "relation",
+          collection: "skill_groups",
+          searchFields: ["name"],
+          valueField: "name",
+          displayFields: ["name"],
+        }
+      - { label: "Level", name: "level", widget: "number", min: 1, max: 100 }
+
+  - name: "Qualifications"
+    label: "Qualifications"
+    folder: "/content/qualifications"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Institution", name: "institution", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "URL", name: "url", widget: "string", required: false }
+      - { label: "Duration", name: "duration", widget: "string" }
+      - {
+          label: "type",
+          name: "type",
+          widget: "select",
+          options: ["educational", "professional"],
+        }
+
+  - name: "configurations"
+    label: "configurations"
+    files:
+      - label: "Home Page"
+        name: "home_page"
+        file: "/content/config/home_page.md"
+
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Subtitle",
+              name: "subtitle",
+              widget: "list",
+              field: { label: "Text", name: "text", widget: "string" },
+            }
+          - {
+              label: "keywords",
+              name: "keywords",
+              widget: "string",
+              required: false,
+            }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Avatar", name: "avatar", widget: "image" }
+          - { label: "key", name: "key", widget: "string", default: "homePage" }
+
+      - label: "About Page"
+        name: "about_page"
+        file: "/content/config/about_page.md"
+        fields:
+          - { label: "Text", name: "text", widget: "markdown" }
+          - {
+              label: "key",
+              name: "key",
+              widget: "string",
+              default: "aboutPage",
+            }
+
+      - label: "Contact Info"
+        name: "contact_info"
+        file: "/content/config/contact_info.md"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Website", name: "website", widget: "string" }
+          - { label: "Resume", name: "resume", widget: "string" }
+          - {
+              label: "key",
+              name: "key",
+              widget: "string",
+              default: "contactInfo",
+            }
+
+      - name: "social_media"
+        label: "Social Media"
+        file: "/content/config/social_media.md"
+        fields:
+          - { label: "Github", name: "github", widget: "string" }
+          - { label: "Linkedin", name: "linkedin", widget: "string" }
+          - { label: "Twitter", name: "twitter", widget: "string" }
+          - {
+              label: "key",
+              name: "key",
+              widget: "string",
+              default: "socialMedia",
+            }
+
+      - name: "footer"
+        label: "Footer"
+        file: "/content/config/footer.md"
+        fields:
+          - { label: "Text", name: "text", widget: "string" }
+          - {
+              label: "key",
+              name: "key",
+              widget: "string",
+              default: "footerDetails",
+            }

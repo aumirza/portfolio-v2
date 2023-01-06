@@ -5,7 +5,7 @@ import { HeroSection } from "../components/sections/HeroSection"
 import { HireMe } from "../components/sections/HireMe"
 import { ProjectSection } from "../components/sections/ProjectSection"
 import { TestimonialSection } from "../components/sections/TestimonialSection"
-import { Seo } from "../components/seo"
+import { Seo } from "../components/Seo"
 
 const IndexPage = () => {
   return (

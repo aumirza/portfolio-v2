@@ -6,8 +6,31 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { TestimonialCard } from "../TestimonialCard"
+import { graphql, useStaticQuery } from "gatsby"
 
 export const TestimonialSection = () => {
+  const data = useStaticQuery(graphql`
+    query getTestimonialQuery {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(testimonials)/" } }
+      ) {
+        edges {
+          node {
+            id
+            fields: frontmatter {
+              name
+              title
+              company
+              quote
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const testimonials = data.allMarkdownRemark.edges
+
   return (
     <FullSection>
       <div className="mb-14">
@@ -25,8 +48,8 @@ export const TestimonialSection = () => {
           slidesToShow={1.9}
           // slidesToScroll={3}
         >
-          {[1, 2, 3, 4, 5, 6].map(item => (
-            <TestimonialCard key={item} testimonial={{ text: item }} />
+          {testimonials.map(edge => (
+            <TestimonialCard key={edge.id} testimonial={edge.node.fields} />
           ))}
         </Slider>
       </div>

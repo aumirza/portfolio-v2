@@ -12,7 +12,7 @@ export const ProjectCard = ({ project, rtl }) => {
             rtl ? "col-start-5" : "col-end-8"
           }`}
         >
-          <div className="group rounded-md h-72 w-full bg-primary hover:bg-transparent">
+          <div className="group rounded-md h-72 w-full bg-secondary hover:bg-transparent">
             <img
               className="h-full object-cover w-full mix-blend-multiply rounded-md group-hover:grayscale-0 group-hover:brightness-100 grayscale brightness-90"
               src={cover}
@@ -34,7 +34,7 @@ export const ProjectCard = ({ project, rtl }) => {
               <span>Featured project</span>
             </div>
             <h1 className="text-2xl">{project.title}</h1>
-            <div className="z-20 my-3 bg-primary text-white h-28 w-full rounded-md shadow-lg p-5">
+            <div className="z-20 my-3 bg-primary  h-28 w-full rounded-md shadow-lg p-5">
               <p className="text-sm">
                 {description.substring(0, 150) +
                   (description.length > 150 ? "  ...  " : "") +
@@ -49,7 +49,7 @@ export const ProjectCard = ({ project, rtl }) => {
             <div className="flex">
               {project.tech_stack
                 ? project.tech_stack.map((tech, i) => (
-                    <div className="px-1" key={i}>
+                    <div className="px-1" key={i + tech.name}>
                       <span>{tech.name}</span>
                     </div>
                   ))
