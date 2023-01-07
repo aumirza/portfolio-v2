@@ -54,15 +54,21 @@ export const QualificationSection = () => {
     (a, b) => new Date(b.fields.date) - new Date(a.fields.date)
   )
 
+  const toggleHandler = () => {
+    setShowEducational(!showEducational)
+  }
+
   return (
     <div className="flex flex-col items-center">
       <div className="mb-5">
-        <h1 className="text-3xl font-bold">My Qualification</h1>
+        <h1 className="text-2xl md:text-3xl mb-2 border-b-2 border-primary font-bold">
+          My Qualification
+        </h1>
       </div>
 
       <div className="my-5 mb-10  max-w-3xl w-full flex justify-between cursor-pointer">
-        <div
-          onClick={() => setShowEducational(true)}
+        <button
+          onClick={toggleHandler}
           className="w-1/2 flex justify-center items-center"
         >
           {showEducational ? (
@@ -71,10 +77,10 @@ export const QualificationSection = () => {
             <HiOutlineAcademicCap className="text-3xl mr-2" />
           )}
           <h3 className="text-lg font-bold">Educational</h3>
-        </div>
+        </button>
 
-        <div
-          onClick={() => setShowEducational(false)}
+        <button
+          onClick={toggleHandler}
           className="w-1/2 flex justify-center items-center cursor-pointer"
         >
           {!showEducational ? (
@@ -83,7 +89,7 @@ export const QualificationSection = () => {
             <BsBriefcase className="text-3xl mr-2" />
           )}
           <h3 className="text-lg font-bold">Professional</h3>
-        </div>
+        </button>
       </div>
 
       {showEducational ? (

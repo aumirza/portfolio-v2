@@ -5,7 +5,7 @@ export const TestimonialCard = ({
   testimonial: { name, avatar, title, company, quote },
 }) => {
   return (
-    <blockquote className="w-[30rem] p-5 h-60 bg-gray-300 flex flex-col justify-center items-center rounded-md shadow-lg">
+    <blockquote className="w-[30rem] p-1 md:p-5 h-96 md:h-60 bg-gray-300 dark:text-secondary flex flex-col justify-center items-center rounded-md shadow-lg">
       <cite className="w-full">
         <div className="w-full flex">
           <div className="mr-4 mb-2">
@@ -33,7 +33,9 @@ export const TestimonialCard = ({
       </cite>
       <div className="relative mt-2">
         <FaQuoteLeft className="absolute text-2xl" />
-        <div className="px-5 ml-2"> {quote}</div>
+        <div className="px-5 text-sm md:text-base ml-2 w-[30ch] md:w-auto">
+          {quote}
+        </div>
       </div>
     </blockquote>
   )

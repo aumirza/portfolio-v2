@@ -43,6 +43,12 @@ collections:
           multiple: true,
           displayFields: ["name"],
         }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
 
   - name: "testimonials"
     label: "Testimonials"
@@ -113,6 +119,27 @@ collections:
   - name: "configurations"
     label: "configurations"
     files:
+      - label: "Site Metadata"
+        name: "site_metadata"
+        file: "/content/config/site_metadata.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "text",
+              required: false,
+            }
+          - { label: "URL", name: "url", widget: "string", required: false }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - { label: "Text Logo", name: "text_logo", widget: "string" }
+          - {
+              label: "key",
+              name: "key",
+              widget: "string",
+              default: "siteMetadata",
+            }
+
       - label: "Home Page"
         name: "home_page"
         file: "/content/config/home_page.md"

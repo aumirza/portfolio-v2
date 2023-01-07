@@ -4,7 +4,7 @@ import { AiOutlineMail } from "react-icons/ai"
 import { BsFillTelephoneFill } from "react-icons/bs"
 import { GoLocation } from "react-icons/go"
 
-export const ContactDetails = () => {
+export const ContactDetails = ({ className }) => {
   const data = useStaticQuery(graphql`
     query getContactDetails {
       allMarkdownRemark(
@@ -29,34 +29,32 @@ export const ContactDetails = () => {
     data.allMarkdownRemark.edges[0].node.fields
 
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="mb-5 text-2xl font-bold">Contact Info</h1>
-
+    <div className={"h-full flex flex-col items-center " + className}>
       <div className="">
         <div className="flex my-3">
-          <AiOutlineMail className="text-primary text-2xl mr-2" />
+          <AiOutlineMail className="text-2xl mr-2" />
           <p className="text-lg">
-            <a href="mailto:" className="text-primary">
+            <a href={"mailto:" + email} className="">
               {email}
             </a>
           </p>
         </div>
 
         <div className="flex my-3">
-          <BsFillTelephoneFill className="text-primary text-2xl mr-2" />
+          <BsFillTelephoneFill className=" text-2xl mr-2" />
           <p className="text-lg">
-            <a href="tel:" className="text-primary">
+            <a href={"tel:" + phone} className="">
               {phone}
             </a>
           </p>
         </div>
 
         <div className="flex my-3">
-          <GoLocation className="text-primary text-2xl mr-2" />
+          <GoLocation className="text-2xl mr-2" />
           <p className="text-lg">
             <a
               href={location}
-              className="text-primary"
+              className=""
               dangerouslySetInnerHTML={{
                 __html: address.replace(/\n/g, "<br />"),
               }}

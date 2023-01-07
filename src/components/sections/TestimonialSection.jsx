@@ -34,7 +34,7 @@ export const TestimonialSection = () => {
   return (
     <FullSection>
       <div className="mb-14">
-        <h1 className="text-3xl">Testimonial Section</h1>
+        <h1 className="text-3xl">Testimonials</h1>
       </div>
       <div className="w-10/12">
         <Slider
@@ -45,7 +45,44 @@ export const TestimonialSection = () => {
           centerMode={true}
           centerPadding="60px"
           autoplay={true}
-          slidesToShow={1.9}
+          responsive={[
+            {
+              breakpoint: 320,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: false,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 1.5,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 1440,
+              settings: {
+                slidesToShow: 1.9,
+                slidesToScroll: 1,
+              },
+            },
+          ]}
           // slidesToScroll={3}
         >
           {testimonials.map(edge => (

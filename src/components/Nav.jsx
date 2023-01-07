@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
-import React from "react";
+import { Link } from "gatsby"
+import React from "react"
 
 const NavLink = ({ children, ...restProps }) => {
   return (
@@ -12,12 +12,12 @@ const NavLink = ({ children, ...restProps }) => {
     >
       {children}
     </Link>
-  );
-};
+  )
+}
 
 export const Nav = () => {
   return (
-    <ul className="text-xl flex">
+    <ul className="text-xl hidden md:flex">
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
@@ -27,12 +27,12 @@ export const Nav = () => {
       <li>
         <NavLink to="/projects">Projects</NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink to="/services">Services</NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink to="/contact">Contact</NavLink>
       </li>
     </ul>
-  );
-};
+  )
+}

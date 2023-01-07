@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
 
-export const SocialVertical = () => {
+export const Social = () => {
   const data = useStaticQuery(graphql`
     query getSocialDetails {
       allMarkdownRemark(
@@ -25,15 +25,15 @@ export const SocialVertical = () => {
   const { twitter, github, linkedin } =
     data.allMarkdownRemark.edges[0].node.fields
   return (
-    <div className="md:px-5 px-2">
+    <div className="flex my-2">
       <a href={github}>
-        <FaGithub className="text-3xl text-primary my-3" />
+        <FaGithub className="text-xl" />
       </a>
       <a href={linkedin}>
-        <FaLinkedin className="text-3xl text-primary my-3" />
+        <FaLinkedin className="text-xl mx-3" />
       </a>
       <a href={twitter}>
-        <FaTwitter className="text-3xl text-primary my-3" />
+        <FaTwitter className="text-xl" />
       </a>
     </div>
   )

@@ -9,7 +9,7 @@ export const ContactForm = () => {
           type="text"
           name="name"
           id="name"
-          className="border border-primary rounded-md w-full p-2"
+          className="border border-secondary dark:border-primary  rounded-md w-full p-2"
         />
       </div>
       <div>
@@ -18,7 +18,7 @@ export const ContactForm = () => {
           type="email"
           name="email"
           id="email"
-          className="border border-primary rounded-md w-full p-2"
+          className="border border-secondary dark:border-primary  rounded-md w-full p-2"
         />
       </div>
 
@@ -29,12 +29,12 @@ export const ContactForm = () => {
           id="message"
           cols="30"
           rows="10"
-          className="border border-primary rounded-md w-full p-2"
+          className="border border-secondary dark:border-primary  rounded-md w-full p-2"
         ></textarea>
       </div>
 
       <div>
-        <button className="border border-primary text-primary py-0.5 px-3 rounded-md">
+        <button className="border border-secondary dark:border-primary  py-0.5 px-3 rounded-md">
           <span className="text-base">Send</span>
         </button>
       </div>

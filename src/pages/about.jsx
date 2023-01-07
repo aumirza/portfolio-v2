@@ -3,6 +3,7 @@ import { Layout } from "../components/Layout"
 import { AboutSection } from "../components/sections/AboutSection"
 import { QualificationSection } from "../components/sections/QualificationSection"
 import { SkillsSection } from "../components/sections/SkillsSection"
+import { Seo } from "../components/Seo"
 
 const about = () => {
   return (
@@ -15,4 +16,4 @@ const about = () => {
 }
 
 export default about
-export const Head = () => <title>Ahmadullah mirza | About</title>
+export const Head = () => <Seo title="Contact" />

@@ -3,6 +3,7 @@ import { ContactDetails } from "../components/ContactDetails"
 import { ContactForm } from "../components/ContactForm"
 import { FullSection } from "../components/FullSection"
 import { Layout } from "../components/Layout"
+import { Seo } from "../components/Seo"
 
 const contact = () => {
   return (
@@ -12,11 +13,9 @@ const contact = () => {
           <h1 className="text-4xl">Contact</h1>
         </div>
 
-        <div className="flex bg-gray-100 rounded-lg w-full max-w-3xl shadow-xl p-5">
+        <div className="flex rounded-lg max-w-4xl ">
           <ContactForm />
-          <div className="ml-10 px-5">
-            <ContactDetails />
-          </div>
+          <ContactDetails className="ml-10 px-5" />
         </div>
       </FullSection>
     </Layout>
@@ -24,4 +23,4 @@ const contact = () => {
 }
 
 export default contact
-export const Head = () => <title>Ahmadullah mirza | Contact</title>
+export const Head = () => <Seo title="Contact" />

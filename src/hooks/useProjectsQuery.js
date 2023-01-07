@@ -1,10 +1,10 @@
 import { graphql, useStaticQuery } from "gatsby"
 
 export const useProjectsQuery = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       allTechStacks: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(tech_stack)/" } }
+        filter: { fileAbsolutePath: { regex: "/(skills)/" } }
       ) {
         techStack: edges {
           tech: node {
@@ -35,24 +35,24 @@ export const useProjectsQuery = () => {
       }
     }
   `)
-    const techStack = data.allTechStacks.techStack
+  const techStack = data.allTechStacks.techStack
 
-    let projects = data.allProjects.projects
+  let projects = data.allProjects.projects
 
-    projects = projects.map(edge => {
-        edge.project.fields.tech_stack = edge.project.fields.tech_stack?.map(
-            tech => {
-                const techData = techStack.find(
-                    techStack => techStack.tech.fields.name === tech
-                )
-                return {
-                    name: techData?.tech.fields.name,
-                    icon: techData?.tech.fields.icon,
-                }
-            }
+  projects = projects.map(edge => {
+    edge.project.fields.tech_stack = edge.project.fields.tech_stack?.map(
+      tech => {
+        const techData = techStack.find(
+          techStack => techStack.tech.fields.name === tech
         )
-        return edge
-    })
+        return {
+          name: techData?.tech.fields.name,
+          icon: techData?.tech.fields.icon,
+        }
+      }
+    )
+    return edge
+  })
 
-    return projects
+  return projects
 }
