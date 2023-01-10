@@ -53,7 +53,7 @@ export const Nav = () => {
       />
       <div
         className={
-          "md:hidden fixed h-full w-full top-0 left-0 transform transition-all duration-700 " +
+          "md:hidden fixed h-full w-full top-0 left-0 transform transition-all  duration-700 " +
           (showNav ? "translate-x-0" : "-translate-x-full")
         }
       >

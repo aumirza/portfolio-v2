@@ -28,7 +28,7 @@ export const ContactForm = () => {
           name="message"
           id="message"
           cols="30"
-          rows="10"
+          rows="8"
           className="border border-secondary dark:border-primary  rounded-md w-full p-2"
         ></textarea>
       </div>

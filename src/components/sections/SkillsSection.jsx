@@ -23,7 +23,7 @@ export const SkillsSection = () => {
 
   const skills = data.allMarkdownRemark.edges
   return (
-    <FullSection>
+    <FullSection centerY={false}>
       <div className="mb-14">
         <h1 className="text-3xl font-bold">My Skills</h1>
       </div>

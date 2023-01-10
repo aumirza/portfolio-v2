@@ -12,7 +12,7 @@ export const ProjectCard = ({ project, rtl, className }) => {
             rtl ? "md:col-start-5" : "md:col-end-8"
           }`}
         >
-          <div className="group rounded-md h-64 lg:h-72 w-full bg-secondary md:hover:bg-transparent">
+          <div className="group rounded-md h-72 w-full bg-secondary md:hover:bg-transparent">
             <img
               className="h-full object-cover w-full mix-blend-multiply rounded-md md:group-hover:grayscale-0 md:group-hover:brightness-100 grayscale brightness-90"
               src={cover}

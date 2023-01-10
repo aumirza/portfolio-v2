@@ -9,13 +9,13 @@ const contact = () => {
   return (
     <Layout>
       <FullSection>
-        <div className="flex justify-center my-10">
+        <div className="mt-10 flex justify-center md:my-10">
           <h1 className="text-4xl">Contact</h1>
         </div>
 
-        <div className="flex rounded-lg max-w-4xl ">
+        <div className="flex flex-col-reverse md:flex-row rounded-lg max-w-4xl ">
           <ContactForm />
-          <ContactDetails className="ml-10 px-5" />
+          <ContactDetails className="md:ml-10 px-5" />
         </div>
       </FullSection>
     </Layout>

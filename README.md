@@ -4,6 +4,13 @@
 
 About me and my projects.
 
+## Features
+
+- Responsive
+- SEO
+- Dark Mode
+- NetlifyCMS
+
 # Tech Stack
 
 ## Frontend
@@ -23,13 +30,6 @@ About me and my projects.
 - Login with your Netlify account
 - Add/Edit/Delete data
 
-## Features
-
-- Responsive
-- SEO
-- Dark Mode
-- NetlifyCMS
-
 # Tools
 
 - Figma
@@ -43,19 +43,20 @@ About me and my projects.
 
 - [x] Setup NetlifyCMS
 - [x] Mobile navigation
-- [] Add 404 page
-- [] Add Loading page
-- [] Scroll to top button
-- [] Dynamic Contact form
-- [] Projects filter
-- [] Create Service section
-- [] Projects search
-- [] Projects pagination
+- [x] Add 404 page
+- [ ] Add Loading page
+- [ ] Scroll to top button
+- [ ] Dynamic Contact form
+- [ ] Projects filter
+- [ ] Create Service section
+- [ ] Projects search
+- [ ] Projects pagination
 
 ## Fix
 
-- [] Breaking Testimonials slider in Mobile
-- [] Scroll Down button not working
+- [x] Breaking Testimonials slider in Mobile
+- [x] Scroll Down button not working
+- [ ] Fix Page title in mobile
 
 ## Add data
 
@@ -64,8 +65,8 @@ About me and my projects.
 - [x] Add Qualifications
 - [x] Add Projects
 - [x] Add Social Links
-- [] Add Services
-- [] Add Resume
+- [ ] Add Services
+- [ ] Add Resume
 
 # Setup
 

@@ -42,23 +42,16 @@ export const TestimonialSection = () => {
           infinite={true}
           speed={9000}
           autoplaySpeed={0}
+          centerPadding="0px"
           centerMode={true}
-          centerPadding="60px"
           autoplay={true}
+          slidesToShow={1}
+          slidesToScroll={1}
           responsive={[
-            {
-              breakpoint: 320,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: false,
-              },
-            },
             {
               breakpoint: 480,
               settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
+                centerPadding: "20px",
               },
             },
             {
@@ -78,12 +71,11 @@ export const TestimonialSection = () => {
             {
               breakpoint: 1440,
               settings: {
-                slidesToShow: 1.9,
+                slidesToShow: 2,
                 slidesToScroll: 1,
               },
             },
           ]}
-          // slidesToScroll={3}
         >
           {testimonials.map(edge => (
             <TestimonialCard key={edge.id} testimonial={edge.node.fields} />
