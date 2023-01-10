@@ -1,5 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
+import { FaBars } from "react-icons/fa"
+import { AiOutlineClose } from "react-icons/ai"
 
 const NavLink = ({ children, ...restProps }) => {
   return (
@@ -15,9 +17,9 @@ const NavLink = ({ children, ...restProps }) => {
   )
 }
 
-export const Nav = () => {
+const NavList = ({ className }) => {
   return (
-    <ul className="text-xl hidden md:flex">
+    <ul className={"text-xl " + className}>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
@@ -34,5 +36,62 @@ export const Nav = () => {
         <NavLink to="/contact">Contact</NavLink>
       </li>
     </ul>
+  )
+}
+
+export const Nav = () => {
+  const [showNav, setShowNav] = React.useState(false)
+  const navToggleHandler = () => {
+    setShowNav(!showNav)
+  }
+
+  return (
+    <div className="">
+      <FaBars
+        onClick={navToggleHandler}
+        className="md:hidden text-2xl text-primary"
+      />
+      <div
+        className={
+          "md:hidden fixed h-full w-full top-0 left-0 transform transition-all duration-700 " +
+          (showNav ? "translate-x-0" : "-translate-x-full")
+        }
+      >
+        <div
+          className={
+            "bg-primary w-full h-full fixed left-0 top-0 " +
+            (showNav
+              ? "translate-x-0  duration-500 ease-out"
+              : "-translate-x-full  duration-1000 ease-in")
+          }
+        ></div>
+        <div
+          className={
+            "bg-secondary  w-full h-full fixed top-0 left-0 " +
+            (showNav
+              ? "translate-x-0  duration-700 ease-out"
+              : "-translate-x-full duration-700 ease-in")
+          }
+        ></div>
+        <div
+          className={
+            "bg-gray-600 h-full w-full z-20 flex justify-center items-center " +
+            (showNav
+              ? "translate-x-0  duration-1000 ease-out"
+              : "-translate-x-full duration-500 ease-in")
+          }
+        >
+          <div className="fixed right-5 top-5">
+            <AiOutlineClose
+              className="text-3xl text-primary"
+              onClick={navToggleHandler}
+            />
+          </div>
+          <NavList />
+        </div>
+      </div>
+
+      <NavList className="hidden md:flex" />
+    </div>
   )
 }

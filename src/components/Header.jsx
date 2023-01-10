@@ -1,7 +1,7 @@
-import React from "react";
-import { Logo } from "./Logo";
-import { Nav } from "./Nav";
-import { ThemeToggle } from "./ThemeToogle";
+import React from "react"
+import { Logo } from "./Logo"
+import { Nav } from "./Nav"
+import { ThemeToggle } from "./ThemeToogle"
 
 export const Header = () => {
   return (
@@ -18,5 +18,5 @@ export const Header = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
