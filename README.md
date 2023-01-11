@@ -44,9 +44,10 @@ About me and my projects.
 - [x] Setup NetlifyCMS
 - [x] Mobile navigation
 - [x] Add 404 page
+- [x] Dynamic Contact form
+- [ ] Add manifest (PWA)
 - [ ] Add Loading page
 - [ ] Scroll to top button
-- [ ] Dynamic Contact form
 - [ ] Projects filter
 - [ ] Create Service section
 - [ ] Projects search

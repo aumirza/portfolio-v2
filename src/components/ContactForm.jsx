@@ -2,7 +2,7 @@ import React from "react"
 
 export const ContactForm = () => {
   return (
-    <div className="">
+    <form name="contact" method="POST" netlify>
       <div className="">
         <label htmlFor="name">Name</label>
         <input
@@ -34,10 +34,13 @@ export const ContactForm = () => {
       </div>
 
       <div>
-        <button className="border border-secondary dark:border-primary  py-0.5 px-3 rounded-md">
+        <button
+          type="submit"
+          className="border border-secondary dark:border-primary  py-0.5 px-3 rounded-md"
+        >
           <span className="text-base">Send</span>
         </button>
       </div>
-    </div>
+    </form>
   )
 }
