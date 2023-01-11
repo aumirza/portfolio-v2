@@ -1,9 +1,9 @@
 import React from "react"
-import { ContactDetails } from "../components/ContactDetails"
-import { ContactForm } from "../components/ContactForm"
-import { FullSection } from "../components/FullSection"
-import { Layout } from "../components/Layout"
-import { Seo } from "../components/Seo"
+import { ContactDetails } from "../../components/ContactDetails"
+import { ContactForm } from "../../components/ContactForm"
+import { FullSection } from "../../components/FullSection"
+import { Layout } from "../../components/Layout"
+import { Seo } from "../../components/Seo"
 
 const contact = () => {
   return (
