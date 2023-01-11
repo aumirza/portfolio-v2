@@ -7,7 +7,6 @@ export const ThemeToggle = () => {
   useEffect(() => {
     const darkMode =
       sessionStorage.getItem("darkMode") === "true" ? true : false
-    console.log(darkMode)
     if (darkMode !== null) {
       setDarkMode(darkMode)
       document.documentElement.classList.toggle("dark", darkMode)

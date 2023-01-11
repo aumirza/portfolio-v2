@@ -1,0 +1,15 @@
+[build]
+    publish = "public/"
+    command = "gatsby build"
+
+    [build.environment]
+    NODE_VERSION = "18.0.0"
+    NPM_FLAGS = "--force"
+
+[dev]
+    command = "gatsby develop"
+    target-port = 8000
+    live-reload-port = 8001
+
+    [dev.environment]
+    NODE_VERSION = "^18.0.0"
