@@ -8,7 +8,9 @@ import { graphql, useStaticQuery } from "gatsby"
 export const HeroSection = () => {
   const data = useStaticQuery(graphql`
     query getHomePageDetails {
-      allMarkdownRemark(filter: { frontmatter: { key: { eq: "homePage" } } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { key: { eq: "heroSection" } } }
+      ) {
         edges {
           node {
             id

@@ -6,7 +6,9 @@ import ReactMarkdown from "react-markdown"
 export const AboutSection = () => {
   const data = useStaticQuery(graphql`
     query getAboutSectionDetails {
-      allMarkdownRemark(filter: { frontmatter: { key: { eq: "aboutPage" } } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { key: { eq: "aboutSection" } } }
+      ) {
         edges {
           node {
             id

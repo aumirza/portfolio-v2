@@ -117,7 +117,7 @@ collections:
         }
 
   - name: "configurations"
-    label: "configurations"
+    label: "Configurations"
     files:
       - label: "Site Metadata"
         name: "site_metadata"
@@ -130,6 +130,12 @@ collections:
               widget: "text",
               required: false,
             }
+            - {
+              label: "keywords",
+              name: "keywords",
+              widget: "string",
+              required: false,
+            }
           - { label: "URL", name: "url", widget: "string", required: false }
           - { label: "Logo", name: "logo", widget: "image", required: false }
           - { label: "Text Logo", name: "text_logo", widget: "string" }
@@ -140,9 +146,9 @@ collections:
               default: "siteMetadata",
             }
 
-      - label: "Home Page"
-        name: "home_page"
-        file: "/content/config/home_page.md"
+      - label: "Hero Section"
+        name: "hero_section"
+        file: "/content/config/hero_section.md"
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - {
@@ -152,19 +158,12 @@ collections:
               field: { label: "Text", name: "text", widget: "string" },
             }
           - { label: "Resume", name: "resume", widget: "string" }
-          - {
-              label: "keywords",
-              name: "keywords",
-              widget: "string",
-              required: false,
-            }
-          - { label: "Description", name: "description", widget: "text" }
           - { label: "Avatar", name: "avatar", widget: "image" }
           - { label: "key", name: "key", widget: "string", default: "homePage" }
 
-      - label: "About Page"
-        name: "about_page"
-        file: "/content/config/about_page.md"
+      - label: "About Section"
+        name: "about_section"
+        file: "/content/config/about_section.md"
         fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Text", name: "text", widget: "markdown" }
