@@ -1,4 +1,5 @@
 import React from "react"
+import ScrollAnimation from "react-animate-on-scroll"
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"
 
 export const ProjectCard = ({ project, rtl, className }) => {
@@ -7,26 +8,35 @@ export const ProjectCard = ({ project, rtl, className }) => {
   return (
     <div className={"max-w-[60rem] mx-auto " + className}>
       <div className="grid grid-cols-1 md:grid-cols-12 ">
-        <div
-          className={`md:z-10 col-start-1 row-start-1 md:col-span-8 ${
-            rtl ? "md:col-start-5" : "md:col-end-8"
+        <ScrollAnimation
+          animateIn={rtl ? "fadeInRight" : "fadeInLeft"}
+          animateOnce={true}
+          duration={1}
+          className={`col-start-1 row-start-1 md:col-span-8 ${
+            rtl ? "md:col-start-6" : "md:col-end-8"
           }`}
         >
-          <div className="group rounded-md h-72 w-full bg-secondary md:hover:bg-transparent">
+          <div className="md:z-10 group rounded-md h-72 w-full ">
+            {/* //bg-secondary md:hover:bg-transparent */}
             <img
-              className="h-full object-cover w-full mix-blend-multiply rounded-md md:group-hover:grayscale-0 md:group-hover:brightness-100 grayscale brightness-90"
+              className="h-full object-cover w-full mix-blend-multiply rounded-md "
+              // md:group-hover:grayscale-0 md:group-hover:brightness-100 grayscale brightness-90
               src={cover}
               alt={title}
             />
           </div>
-        </div>
-        <div
-          className={`text-white md:text-secondary row-start-1 col-start-1  md:col-span-7 ${
+        </ScrollAnimation>
+
+        <ScrollAnimation
+          animateIn={rtl ? "fadeInLeft" : "fadeInRight"}
+          animateOnce={true}
+          duration={1}
+          className={`text-white row-start-1 col-start-1  md:col-span-7 ${
             rtl ? "md:col-end-7" : "md:col-start-6"
           }`}
         >
           <div
-            className={`h-full flex flex-col justify-center items-center ${
+            className={`h-full flex flex-col justify-center items-center z-20 ${
               rtl ? "md:items-start" : "md:items-end"
             }`}
           >
@@ -69,7 +79,7 @@ export const ProjectCard = ({ project, rtl, className }) => {
               )}
             </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 import { Layout } from "../components/Layout"
-import { FullSection } from "../components/FullSection"
+import { FullSection } from "../components/layouts/FullSection"
 import { Seo } from "../components/Seo"
 
 const services = () => {

@@ -1,12 +1,13 @@
 import React from "react"
-import { FullSection } from "../FullSection"
+import { graphql, useStaticQuery } from "gatsby"
+import { FullSection } from "../layouts/FullSection"
 import Slider from "react-slick"
 
 // Import css files
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+
 import { TestimonialCard } from "../TestimonialCard"
-import { graphql, useStaticQuery } from "gatsby"
 
 export const TestimonialSection = () => {
   const data = useStaticQuery(graphql`
@@ -78,7 +79,10 @@ export const TestimonialSection = () => {
           ]}
         >
           {testimonials.map(edge => (
-            <TestimonialCard key={edge.id} testimonial={edge.node.fields} />
+            <TestimonialCard
+              key={edge.node.id}
+              testimonial={edge.node.fields}
+            />
           ))}
         </Slider>
       </div>

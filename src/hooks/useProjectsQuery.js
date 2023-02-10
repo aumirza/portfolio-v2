@@ -21,6 +21,7 @@ export const useProjectsQuery = () => {
       ) {
         projects: edges {
           project: node {
+            id
             fields: frontmatter {
               title
               date

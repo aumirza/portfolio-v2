@@ -3,6 +3,7 @@ import { Layout } from "../components/Layout"
 import { ProjectGridCard } from "../components/ProjectGridCard"
 import { useProjectsQuery } from "../hooks/useProjectsQuery"
 import { Seo } from "../components/Seo"
+import ScrollAnimation from "react-animate-on-scroll"
 
 const Projects = () => {
   const projects = useProjectsQuery()
@@ -17,10 +18,14 @@ const Projects = () => {
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-10 ">
         {projects.map(edge => (
-          <ProjectGridCard
+          <ScrollAnimation
             key={edge.project.id}
-            project={edge.project.fields}
-          />
+            animateIn="fadeInUp"
+            animateOnce={true}
+            duration={1}
+          >
+            <ProjectGridCard project={edge.project.fields} />
+          </ScrollAnimation>
         ))}
       </div>
     </Layout>

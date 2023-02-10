@@ -9,3 +9,6 @@
 
 import "./src/styles/global.tailwind.css"
 import "./src/styles/global.css"
+import "animate.css/animate.compat.css"
+
+document.getElementsByTagName("html")[0].classList.add("dark")

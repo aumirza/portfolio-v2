@@ -1,4 +1,5 @@
 import React from "react"
+import ScrollAnimation from "react-animate-on-scroll"
 import { TimelineCard } from "./TimelineCard"
 
 export const Timeline = ({ timelines }) => {
@@ -7,12 +8,17 @@ export const Timeline = ({ timelines }) => {
       <div class="relative wrap overflow-hidden h-full">
         <div class="border-2 absolute border-primary h-full left-[50%]"></div>
         {timelines.map((timeline, i) => (
-          <TimelineCard
-            timeline={timeline.fields}
-            key={timeline.id}
-            rtl={i % 2}
-            index={i + 1}
-          />
+          <ScrollAnimation
+            animateIn={i % 2 ? "fadeInLeft" : "fadeInRight"}
+            animateOnce={true}
+          >
+            <TimelineCard
+              timeline={timeline.fields}
+              key={timeline.id}
+              rtl={i % 2}
+              index={i + 1}
+            />
+          </ScrollAnimation>
         ))}
       </div>
     </div>

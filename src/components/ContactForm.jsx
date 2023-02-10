@@ -1,4 +1,5 @@
 import React from "react"
+import { InputBox } from "./InputBox"
 
 export const ContactForm = () => {
   return (
@@ -11,42 +12,16 @@ export const ContactForm = () => {
       data-netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <div className="">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          className="border border-secondary dark:border-primary  rounded-md w-full p-2"
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          className="border border-secondary dark:border-primary  rounded-md w-full p-2"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="message">Message</label>
-        <textarea
-          name="message"
-          id="message"
-          cols="30"
-          rows="8"
-          className="border border-secondary dark:border-primary  rounded-md w-full p-2"
-        ></textarea>
-      </div>
+      <InputBox label="Name" name="name" />
+      <InputBox label="Email" name="email" />
+      <InputBox label="Message" name="message" longInput />
 
       <div>
         <button
           type="submit"
-          className="border border-secondary dark:border-primary  py-0.5 px-3 rounded-md"
+          className="bg-primary hover:bg-white text-white dark:hover:bg-secondary hover:text-primary border-primary border-2 duration-300 dark:text-secondary  py-2 w-full rounded-md ease-in-out transition-all"
         >
-          <span className="text-base">Send</span>
+          <span className="text-base font-bold">Send</span>
         </button>
       </div>
     </form>

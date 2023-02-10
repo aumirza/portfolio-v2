@@ -4,23 +4,14 @@ import { FiMoon, FiSun } from "react-icons/fi"
 export const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false)
 
-  useEffect(() => {
-    const darkMode =
-      sessionStorage.getItem("darkMode") === "true" ? true : false
-    if (darkMode !== null) {
-      setDarkMode(darkMode)
-      document.documentElement.classList.toggle("dark", darkMode)
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setDarkMode(true)
-      document.documentElement.classList.add("dark")
-    }
-  }, [])
-
   const darkModeHandler = e => {
     setDarkMode(darkMode => !darkMode)
+  }
+
+  useEffect(() => {
     document.documentElement.classList.toggle("dark")
     sessionStorage.setItem("darkMode", !darkMode)
-  }
+  }, [darkMode])
 
   return (
     <div className="h-8 w-8 flex justify-center items-center">

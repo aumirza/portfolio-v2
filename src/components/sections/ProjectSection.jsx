@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
+import ScrollAnimation from "react-animate-on-scroll"
 import { useProjectsQuery } from "../../hooks/useProjectsQuery"
 import { ProjectCard } from "../ProjectCard"
 
@@ -7,11 +8,11 @@ export const ProjectSection = () => {
   const projects = useProjectsQuery()
   return (
     <div className="flex flex-col items-center mt-20">
-      <div>
+      <ScrollAnimation animateIn="fadeInTop" animateOnce={true} duration={1}>
         <h1 className="text-2xl md:text-4xl font-bold pb-2 border-b-2 border-primary mb-5 md:mb-10">
           Some Featured Projects
         </h1>
-      </div>
+      </ScrollAnimation>
       <div className="w-11/12">
         {projects.map((edge, i) => (
           <ProjectCard
