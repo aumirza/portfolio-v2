@@ -119,6 +119,7 @@ collections:
   - name: "configurations"
     label: "Configurations"
     files:
+
       - label: "Site Metadata"
         name: "site_metadata"
         file: "/content/config/site_metadata.md"
@@ -130,7 +131,7 @@ collections:
               widget: "text",
               required: false,
             }
-            - {
+          - {
               label: "keywords",
               name: "keywords",
               widget: "string",
