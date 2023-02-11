@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react"
 import { FiMoon, FiSun } from "react-icons/fi"
 
 export const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   const darkModeHandler = e => {
     setDarkMode(darkMode => !darkMode)
   }
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark")
-    sessionStorage.setItem("darkMode", !darkMode)
+    document.documentElement.classList.toggle("dark", darkMode)
+    sessionStorage.setItem("darkMode", darkMode)
   }, [darkMode])
 
   return (
