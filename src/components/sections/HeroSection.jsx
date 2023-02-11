@@ -11,7 +11,7 @@ import ScrollAnimation from "react-animate-on-scroll"
 export const HeroSection = () => {
   return (
     <FullSection>
-      <div className="h-[90%] pt-14 w-11/12 flex items-center">
+      <div className="h-[90vh] pt-14 w-11/12 flex items-center">
         <div className="flex-grow h-full flex flex-col justify-around">
           <ScrollAnimation
             animateIn="fadeIn"
@@ -28,7 +28,7 @@ export const HeroSection = () => {
           <AvatarImage />
         </div>
       </div>
-      <div className="h-[10%] w-11/12 flex items-center justify-center">
+      <div className="h-[10vh] w-11/12 flex items-center justify-center">
         <ScrollAnimation
           offset={0}
           animateIn="bounceInUp"
