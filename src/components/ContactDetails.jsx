@@ -3,7 +3,6 @@ import React from "react"
 import ScrollAnimation from "react-animate-on-scroll"
 import { AiOutlineMail } from "react-icons/ai"
 import { BsFillTelephoneFill, BsWhatsapp } from "react-icons/bs"
-import { GoLocation } from "react-icons/go"
 import { ContactDetailCard } from "./ContactDetailCard"
 
 export const ContactDetails = ({ className }) => {
@@ -18,8 +17,8 @@ export const ContactDetails = ({ className }) => {
             fields: frontmatter {
               email
               phone
-              location
-              address
+              # location
+              # address
             }
           }
         }
@@ -27,8 +26,7 @@ export const ContactDetails = ({ className }) => {
     }
   `)
 
-  const { email, phone, location, address } =
-    data.allMarkdownRemark.edges[0].node.fields
+  const { email, phone } = data.allMarkdownRemark.edges[0].node.fields
 
   return (
     <div className={"h-full flex flex-col items-center " + className}>

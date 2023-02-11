@@ -9,7 +9,9 @@ export const Footer = () => {
       <ScrollAnimation offset={0} animateIn="fadeInUp" animateOnce={true}>
         <Social />
       </ScrollAnimation>
-      <Copyright />
+      <ScrollAnimation offset={0} animateIn="fadeIn" animateOnce={true}>
+        <Copyright />
+      </ScrollAnimation>
     </div>
   )
 }

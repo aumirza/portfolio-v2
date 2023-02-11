@@ -1,5 +1,4 @@
 import React from "react"
-import ScrollAnimation from "react-animate-on-scroll"
 import { TfiArrowDown, TfiMouse } from "react-icons/tfi"
 
 export const ScrollDownButton = () => {
@@ -10,13 +9,13 @@ export const ScrollDownButton = () => {
     })
   }
   return (
-    <div
+    <button
       onClick={scrollHandler}
       className="cursor-pointer flex items-center justify-center animate-bounce"
     >
       <TfiMouse className="text-3xl text-primary " />
       <span className="mx-1"> Scroll down </span>
       <TfiArrowDown className="text-xl text-primary" />
-    </div>
+    </button>
   )
 }
