@@ -1,12 +1,13 @@
 ---
-postion: " Front-end / ReactJS Developer Intern"
-institution: SkyFoods
+postion: " Front-end / Typescript Developer"
+institution: Freelancer
 description: >-
-  *  Developed and enhanced a user-friendly dashboard to improve aesthetics and
-  simplicity.
+  * Designed and developed websites, landing pages, and portfolios tailored to
+  client needs.
 
-  * Implemented charts and bar graphs for data visualization, enhancing overall functionality and usability.
+  * Delivered responsive, visually appealing, and high-performing web solutions.
 
-  * Gained valuable experience in designing intuitive and interactive user interfaces.
-started: 2021-05-01T00:00:00.000Z
+  * Focused on user experience, functionality, and modern web design practices.
+started: 2022-03-01T00:00:00.000Z
+ended: 2023-06-22T12:00:00.000Z
 ---
