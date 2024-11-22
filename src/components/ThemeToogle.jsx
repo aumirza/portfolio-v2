@@ -14,7 +14,7 @@ export const ThemeToggle = () => {
   }, [darkMode])
 
   return (
-    <div className="h-8 w-8 flex justify-center items-center">
+    <div className="flex items-center justify-center w-8 h-8 cursor-pointer">
       <FiSun
         className={
           "text-primary  text-3xl duration-200 overflow-hidden " +
@@ -24,7 +24,7 @@ export const ThemeToggle = () => {
       />
       <FiMoon
         className={
-          "text-white text-3xl duration-200 overflow-hidden " +
+          "text-white hover:text-primary text-3xl duration-200 overflow-hidden " +
           (!darkMode ? "h-0 w-0" : "")
         }
         onClick={darkModeHandler}

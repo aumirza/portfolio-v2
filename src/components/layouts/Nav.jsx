@@ -49,7 +49,7 @@ export const Nav = () => {
     <div className="">
       <FaBars
         onClick={navToggleHandler}
-        className="md:hidden text-2xl text-primary"
+        className="text-2xl md:hidden text-primary"
       />
       <div
         className={
@@ -91,7 +91,7 @@ export const Nav = () => {
         </div>
       </div>
 
-      <NavList className="hidden md:flex" />
+      <NavList className="hidden gap-2 md:flex" />
     </div>
   )
 }

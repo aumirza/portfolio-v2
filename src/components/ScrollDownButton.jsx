@@ -11,7 +11,7 @@ export const ScrollDownButton = () => {
   return (
     <button
       onClick={scrollHandler}
-      className="cursor-pointer flex items-center justify-center animate-bounce"
+      className="flex items-center justify-center cursor-pointer animate-bounce hover:animate-none"
     >
       <TfiMouse className="text-3xl text-primary " />
       <span className="mx-1"> Scroll down </span>

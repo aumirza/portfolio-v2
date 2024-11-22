@@ -1,10 +1,10 @@
 ---
 title: Ahmadullah Mirza
 subtitle:
-  - Web Developer
-description: I started my programming career with a blog. From editing my xml
-  templates to a full stack software's. I like to code and program in my free
-  time as a hobby.
+  - Frontend developer
+description:
+  With over 3 years of expertise in crafting innovative digital solutions,
+  I excel in designing intuitive frontends and delivering seamless full-stack applications. Turning complex challenges into impactful user experiences is my passion.
 avatar: /img/profile-pic.png
 key: heroSection
 ---

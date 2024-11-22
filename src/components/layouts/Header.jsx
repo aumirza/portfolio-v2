@@ -5,9 +5,9 @@ import { ThemeToggle } from "../ThemeToogle"
 
 export const Header = () => {
   return (
-    <div className="z-50 bg-white dark:bg-secondary fixed w-full h-16 shadow-lg flex items-center justify-center">
-      <div className="w-11/12 flex justify-between">
-        <div className="flex items-center justify-start">
+    <div className="fixed z-50 flex items-center justify-center w-full h-16 bg-white shadow-lg dark:bg-secondary">
+      <div className="flex justify-between w-11/12">
+        <div className="flex items-center justify-start cursor-pointer">
           <Logo />
         </div>
         <div className="flex items-center">

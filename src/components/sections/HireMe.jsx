@@ -6,18 +6,18 @@ export const HireMe = () => {
   const { title, description, image, button } = useHiremeQuery()
 
   return (
-    <div className="md:h-96  my-10 flex justify-center">
-      <div className="h-full w-10/12 p-5 flex flex-col-reverse md:flex-row justify-around bg-secondary dark:bg-primary dark:text-secondary text-white rounded-2xl shadow-lg">
+    <div id="hireme" className="flex justify-center my-10 md:h-96">
+      <div className="flex flex-col-reverse justify-around w-10/12 h-full p-5 text-white shadow-lg md:flex-row bg-secondary dark:bg-primary dark:text-secondary rounded-2xl">
         <div className="flex flex-col justify-center">
           <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
             <div className="flex items-end mb-1">
-              <h1 className="text-2xl md:text-3xl font-bold mx-1">{title}</h1>
+              <h1 className="mx-1 text-2xl font-bold md:text-4xl">{title}</h1>
             </div>
-            <p className="max-w-[40ch]">{description}</p>
-            <div className="mt-5 flex justify-center md:justify-start">
+            <p className="max-w-[40ch] md:text-lg">{description}</p>
+            <div className="flex justify-center mt-5 md:justify-start">
               <a
                 href={button.link}
-                className="dark:bg-secondary dark:text-white text-secondary bg-primary text-lg p-2 px-5 rounded-md"
+                className="p-2 px-5 text-lg rounded-md dark:bg-secondary dark:text-white text-secondary bg-primary"
               >
                 <span>{button.text}</span>
               </a>
@@ -27,7 +27,7 @@ export const HireMe = () => {
         <div className="flex items-center justify-center">
           <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
             <img
-              className="h-48 w-48 md:h-60 md:w-60 p-2"
+              className="w-48 h-48 p-2 md:h-60 md:w-60"
               src={image}
               alt="Hire Me"
             />
