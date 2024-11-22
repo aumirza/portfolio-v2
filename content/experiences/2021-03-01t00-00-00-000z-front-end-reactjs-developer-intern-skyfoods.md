@@ -1,5 +1,5 @@
 ---
-postion: " Front-end / ReactJS Developer Intern"
+position: " Front-end / ReactJS Developer Intern"
 institution: SkyFoods
 description: >-
   * Developed and enhanced a user-friendly dashboard to improve aesthetics and

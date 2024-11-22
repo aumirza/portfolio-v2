@@ -1,5 +1,5 @@
 ---
-postion: " Front-end / Typescript Developer"
+position: " Front-end / Typescript Developer"
 institution: Freelancer
 description: >-
   * Designed and developed websites, landing pages, and portfolios tailored to

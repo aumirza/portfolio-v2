@@ -1,5 +1,5 @@
 ---
-postion: " Full Stack Developer"
+position: " Full Stack Developer"
 institution: Freelancer
 description: >-
   * Engineered interactive chatbots to improve customer engagement and automate

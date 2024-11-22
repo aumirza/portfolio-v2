@@ -122,7 +122,7 @@ collections:
     create: true
     slug: "{{started}}-{{postion}}-{{institution}}"
     fields:
-      - { label: "Postion", name: "postion", widget: "string" }
+      - { label: "Position", name: "postion", widget: "string" }
       - { label: "Institution", name: "institution", widget: "string" }
       - { label: "Description", name: "description", widget: "markdown" }
       - { label: "Logo", name: "logo", widget: "image", required: false }
