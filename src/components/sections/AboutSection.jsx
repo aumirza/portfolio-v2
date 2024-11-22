@@ -18,8 +18,26 @@ export const AboutSection = () => {
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-center items-center p-2">
         <ScrollAnimation animateIn="fadeInLeft" animateOnce={true} duration={2}>
-          <div className="max-w-[50ch] mt-10 md:mt-0 px-3">
-            <ReactMarkdown>{text}</ReactMarkdown>
+          <div className="max-w-[50ch] mt-10 md:mt-0 px-3 list-inside list-disc">
+            <ReactMarkdown
+              components={{
+                h1: ({ node, ...props }) => (
+                  <h1 className="text-2xl font-bold" {...props} />
+                ),
+                ol: ({ node, ...props }) => (
+                  <ol
+                    className="list-decimal list-inside pl-5 my-2"
+                    {...props}
+                  />
+                ),
+                ul: ({ node, ...props }) => (
+                  <ul className="list-disc pl-5 space-y-2" {...props} />
+                ),
+              }}
+              // rehypePlugins={[rehypeRaw]}
+            >
+              {text}
+            </ReactMarkdown>
           </div>
         </ScrollAnimation>
         <div className="flex-grow pl-10">
