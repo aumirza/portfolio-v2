@@ -18,8 +18,8 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    'gatsby-plugin-postcss',
-    `gatsby-plugin-netlify-cms`,
+    "gatsby-plugin-postcss",
+    `gatsby-plugin-decap-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,7 +32,6 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/content`,
-
       },
     },
     {
@@ -67,6 +66,5 @@ module.exports = {
         icon: `src/images/site-logo.png`, // This path is relative to the root of the site.
       },
     },
-
   ],
 }
