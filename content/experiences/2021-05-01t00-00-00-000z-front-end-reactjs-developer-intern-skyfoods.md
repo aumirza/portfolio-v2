@@ -1,13 +1,14 @@
 ---
-postion: " Front-end / Typescript Developer"
+postion: " Full Stack Developer"
 institution: Freelancer
 description: >-
-  * Designed and developed websites, landing pages, and portfolios tailored to
-  client needs.
+  * Engineered interactive chatbots to improve customer engagement and automate
+  tasks efficiently.
 
-  * Delivered responsive, visually appealing, and high-performing web solutions.
+  * Created dynamic e-commerce platforms with secure payment integration and smooth user experiences.
 
-  * Focused on user experience, functionality, and modern web design practices.
-started: 2022-03-01T00:00:00.000Z
-ended: 2023-06-22T12:00:00.000Z
+  * Handled full stack responsibilities, ensuring cohesive functionality across both frontend and backend
+     components.
+started: 2023-06-01T00:00:00.000Z
+ended: ""
 ---
