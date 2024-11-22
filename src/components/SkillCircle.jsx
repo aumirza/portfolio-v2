@@ -1,7 +1,6 @@
 import React from "react"
 
-export const SkillCircle = ({ fields }) => {
-  const { name, icon, level } = fields
+export const SkillCircle = ({ name, icon, level }) => {
   return (
     <div className="flex flex-col items-center hover:cursor-pointer hover:scale-105">
       <div className="flex items-center justify-center w-14 h-14  md:w-16 md:h-16 mb-3 bg-gray-200 rounded-full">

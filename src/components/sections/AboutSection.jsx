@@ -1,29 +1,11 @@
 import React from "react"
-import { FullSection } from "../layouts/FullSection"
-import { graphql, useStaticQuery } from "gatsby"
 import ReactMarkdown from "react-markdown"
 import ScrollAnimation from "react-animate-on-scroll"
+import { FullSection } from "../layouts/FullSection"
+import { useAboutQuery } from "../../hooks/useAboutQuery"
 
 export const AboutSection = () => {
-  const data = useStaticQuery(graphql`
-    query getAboutSectionDetails {
-      allMarkdownRemark(
-        filter: { frontmatter: { key: { eq: "aboutSection" } } }
-      ) {
-        edges {
-          node {
-            id
-            fields: frontmatter {
-              text
-              image
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const { text, image } = data.allMarkdownRemark.edges[0].node.fields
+  const { text, image } = useAboutQuery()
 
   return (
     <FullSection>

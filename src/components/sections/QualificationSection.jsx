@@ -1,58 +1,14 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { Timeline } from "../Timeline"
 import { HiAcademicCap, HiOutlineAcademicCap } from "react-icons/hi"
 import { BsBriefcase, BsBriefcaseFill } from "react-icons/bs"
+import { Timeline } from "../Timeline"
+import { useExperienceQuery } from "../../hooks/useExperienceQuery"
 
 export const QualificationSection = () => {
   const [showEducational, setShowEducational] = React.useState(true)
-  const data = useStaticQuery(graphql`
-    query getQualificationQuery {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(qualification)/" } }
-      ) {
-        edges {
-          node {
-            id
-            fields: frontmatter {
-              title
-              date
-              institution
-              duration
-              description
-              type
-            }
-          }
-        }
-      }
-    }
-  `)
 
-  const qualifications = data.allMarkdownRemark.edges
-
-  let educationalQualifications = qualifications.filter(
-    ({ node }) => node.fields.type === "educational"
-  )
-
-  educationalQualifications = educationalQualifications.map(item => ({
-    ...item.node,
-  }))
-
-  educationalQualifications = educationalQualifications.sort(
-    (a, b) => new Date(b.fields.date) - new Date(a.fields.date)
-  )
-
-  let professionalQualifications = qualifications.filter(
-    ({ node }) => node.fields.type === "professional"
-  )
-
-  professionalQualifications = professionalQualifications.map(item => ({
-    ...item.node,
-  }))
-
-  professionalQualifications = professionalQualifications.sort(
-    (a, b) => new Date(b.fields.date) - new Date(a.fields.date)
-  )
+  const { educationalQualifications, professionalQualifications } =
+    useExperienceQuery()
 
   const toggleHandler = () => {
     setShowEducational(!showEducational)

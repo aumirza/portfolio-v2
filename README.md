@@ -18,6 +18,7 @@ About me and my projects.
 - Tailwind Css
 - ReactJs
 - GatsbyJs
+- Graphql
 
 ## Backend
 

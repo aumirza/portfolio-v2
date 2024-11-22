@@ -1,33 +1,10 @@
-import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import ScrollAnimation from "react-animate-on-scroll"
+import { useHiremeQuery } from "../../hooks/useHiremeQuery"
 
 export const HireMe = () => {
-  const data = useStaticQuery(graphql`
-    query getHireSectionDetails {
-      allMarkdownRemark(
-        filter: { frontmatter: { key: { eq: "hireSection" } } }
-      ) {
-        edges {
-          node {
-            id
-            fields: frontmatter {
-              title
-              description
-              image
-              button {
-                text
-                link
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  const { title, description, image, button } = useHiremeQuery()
 
-  const { title, description, image, button } =
-    data.allMarkdownRemark.edges[0].node.fields
   return (
     <div className="md:h-96  my-10 flex justify-center">
       <div className="h-full w-10/12 p-5 flex flex-col-reverse md:flex-row justify-around bg-secondary dark:bg-primary dark:text-secondary text-white rounded-2xl shadow-lg">

@@ -1,29 +1,12 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { FullSection } from "../layouts/FullSection"
 import ScrollAnimation from "react-animate-on-scroll"
+import { FullSection } from "../layouts/FullSection"
 import { SkillCircle } from "../SkillCircle"
+import { useSkillsQuery } from "../../hooks/useSkillsQuery"
 
 export const SkillsSection = () => {
-  const data = useStaticQuery(graphql`
-    query getSkillsQuery {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(skills)/" } }) {
-        edges {
-          node {
-            id
-            fields: frontmatter {
-              name
-              icon
-              type
-              level
-            }
-          }
-        }
-      }
-    }
-  `)
+  const { skills } = useSkillsQuery()
 
-  const skills = data.allMarkdownRemark.edges
   return (
     <FullSection centerY={false}>
       <div className="mb-14">
@@ -33,9 +16,9 @@ export const SkillsSection = () => {
       </div>
 
       <div className="grid grid-cols-4 md:grid-cols-8">
-        {skills.map(({ node }) => (
+        {skills.map(({ id, name, icon, level }) => (
           <ScrollAnimation animateIn="zoomIn" animateOnce={true} delay={500}>
-            <SkillCircle key={node.id} fields={node.fields} />
+            <SkillCircle key={id} name={name} icon={icon} level={level} />
           </ScrollAnimation>
         ))}
       </div>

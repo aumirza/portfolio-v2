@@ -25,15 +25,15 @@ export const SocialVertical = () => {
   const { twitter, github, linkedin } =
     data.allMarkdownRemark.edges[0].node.fields
   return (
-    <div className="md:px-5 px-2">
+    <div className="md:px-5 px-2 text-3xl text-white">
       <a href={github}>
-        <FaGithub className="text-3xl text-primary my-3" />
+        <FaGithub />
       </a>
       <a href={linkedin}>
-        <FaLinkedin className="text-3xl text-primary my-3" />
+        <FaLinkedin />
       </a>
       <a href={twitter}>
-        <FaTwitter className="text-3xl text-primary my-3" />
+        <FaTwitter />
       </a>
     </div>
   )
