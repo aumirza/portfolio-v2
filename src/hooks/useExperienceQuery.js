@@ -2,20 +2,19 @@ import { graphql, useStaticQuery } from "gatsby"
 
 export const useExperienceQuery = () => {
   const data = useStaticQuery(graphql`
-    query getQualificationQuery {
+    query getExperiencesQuery {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(qualification)/" } }
+        filter: { fileAbsolutePath: { regex: "/(experiences)/" } }
       ) {
         edges {
           node {
             id
-            fields: frontmatter {
-              title
-              date
+            frontmatter {
+              position
               institution
-              duration
               description
-              type
+              started
+              ended
             }
           }
         }
@@ -23,29 +22,12 @@ export const useExperienceQuery = () => {
     }
   `)
 
-  const qualifications = data.allMarkdownRemark.edges
-
-  let educationalQualifications = qualifications.filter(
-    ({ node }) => node.fields.type === "educational"
-  )
-  educationalQualifications = educationalQualifications.map(item => ({
-    ...item.node,
-  }))
-  educationalQualifications = educationalQualifications.sort(
-    (a, b) => new Date(b.fields.date) - new Date(a.fields.date)
-  )
-  let professionalQualifications = qualifications.filter(
-    ({ node }) => node.fields.type === "professional"
-  )
-  professionalQualifications = professionalQualifications.map(item => ({
-    ...item.node,
-  }))
-  professionalQualifications = professionalQualifications.sort(
-    (a, b) => new Date(b.fields.date) - new Date(a.fields.date)
+  const experiences = data.allMarkdownRemark.edges.map(
+    ({ node: { id, frontmatter } }) => ({
+      id,
+      ...frontmatter,
+    })
   )
 
-  return {
-    educationalQualifications,
-    professionalQualifications,
-  }
+  return { experiences }
 }

@@ -1,6 +1,5 @@
 import React from "react"
 import ScrollAnimation from "react-animate-on-scroll"
-import { FullSection } from "../layouts/FullSection"
 import { SkillCircle } from "../SkillCircle"
 import { useSkillsQuery } from "../../hooks/useSkillsQuery"
 
@@ -8,10 +7,12 @@ export const SkillsSection = () => {
   const { skills } = useSkillsQuery()
 
   return (
-    <FullSection centerY={false}>
+    <div className="flex flex-col items-center justify-center my-20">
       <div className="mb-14">
         <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-          <h1 className="text-3xl font-bold">My Skills</h1>
+          <h2 className="mb-2 text-2xl font-bold border-b-2 md:text-3xl border-primary">
+            My Skills
+          </h2>
         </ScrollAnimation>
       </div>
 
@@ -22,6 +23,6 @@ export const SkillsSection = () => {
           </ScrollAnimation>
         ))}
       </div>
-    </FullSection>
+    </div>
   )
 }
