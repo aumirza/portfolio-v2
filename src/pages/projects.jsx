@@ -11,12 +11,12 @@ const Projects = () => {
   return (
     <Layout className="pt-20">
       <div className="flex justify-center my-10">
-        <h1 className="text-4xl mb-2 font-bold text-secondary dark:text-white border-b-4 border-primary">
+        <h1 className="mb-2 text-4xl font-bold border-b-4 text-secondary dark:text-white border-primary">
           Projects
         </h1>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-10 ">
+      <div className="grid max-w-6xl grid-cols-1 gap-10 mx-auto mb-10 md:grid-cols-2 lg:grid-cols-3 ">
         {projects.map(edge => (
           <ScrollAnimation
             key={edge.project.id}

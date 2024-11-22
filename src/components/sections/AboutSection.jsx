@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown"
 import ScrollAnimation from "react-animate-on-scroll"
 import { useAboutQuery } from "../../hooks/useAboutQuery"
 import { FullSection } from "../layouts/FullSection"
-import { markdowComponents } from "../../utils/markdownComponents"
+import { markdownComponents } from "../../utils/markdownComponents"
 
 export const AboutSection = () => {
   const { text, image } = useAboutQuery()
@@ -20,7 +20,9 @@ export const AboutSection = () => {
       <div className="flex flex-col-reverse items-center justify-center p-2 md:flex-row">
         <ScrollAnimation animateIn="fadeInLeft" animateOnce={true} duration={2}>
           <div className="max-w-[50ch] mt-10 md:mt-0 px-3 list-inside list-disc">
-            <ReactMarkdown components={markdowComponents}>{text}</ReactMarkdown>
+            <ReactMarkdown components={markdownComponents}>
+              {text}
+            </ReactMarkdown>
           </div>
         </ScrollAnimation>
         <div className="flex-grow pl-10">

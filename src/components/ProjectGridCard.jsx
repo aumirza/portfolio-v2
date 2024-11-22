@@ -5,12 +5,12 @@ export const ProjectGridCard = ({ project }) => {
   const { title, description, cover } = project
 
   return (
-    <div className="w-[22rem] h-[28rem] mx-auto p-5 bg-primary text-secondary rounded-3xl shadow-md hover:-translate-y-3 hover:shadow-xl flex flex-col items-center transition-all ease-in-out duration-500">
+    <div className="w-[22rem] h-[28rem] mx-auto p-5 bg-primary text-secondary rounded-xl shadow-md hover:-translate-y-3 hover:shadow-xl flex flex-col items-center transition-all ease-in-out duration-500">
       {/* <div className="z-20 group h-52 w-[98%] flex justify-center items-center hover:bg-transparent bg-secondary dark:bg-primary  overflow-hidden"> */}
-      <div className="z-20 group h-60 flex justify-center items-center hover:bg-transparent   overflow-hidden">
+      <div className="z-20 flex items-center justify-center overflow-hidden group h-60 hover:bg-transparent">
         <img
-          className="h-full object-cover rounded-md mix-blend-multiply"
-          // className="h-full object-cover rounded-md mix-blend-multiply group-hover:grayscale-0 group-hover:brightness-100 grayscale brightness-90"
+          className="object-cover h-full rounded-md mix-blend-multiply"
+          // className="object-cover h-full rounded-md mix-blend-multiply group-hover:grayscale-0 group-hover:brightness-100 grayscale brightness-90"
           src={cover}
           alt={title}
         />
@@ -35,7 +35,7 @@ export const ProjectGridCard = ({ project }) => {
         {project.source && (
           <a
             href={project.source}
-            className="hover:text-white"
+            className="px-5 py-2 border-2 rounded-lg text-secondary border-secondary hover:bg-secondary hover:text-primary"
             target="_blank"
             rel="noreferrer"
           >
@@ -45,7 +45,7 @@ export const ProjectGridCard = ({ project }) => {
         {project.url && (
           <a
             href={project.url}
-            className="border-2 text-secondary border-secondary hover:bg-secondary hover:text-primary px-5 py-2  rounded-full"
+            className="px-5 py-2 border-2 rounded-lg text-secondary border-secondary hover:bg-secondary hover:text-primary"
           >
             <span className="text-lg">View</span>
           </a>

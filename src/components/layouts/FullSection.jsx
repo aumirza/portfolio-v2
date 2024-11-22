@@ -9,11 +9,17 @@ export const FullSection = ({
 }) => {
   return (
     <div
-      className={`min-h-screen flex flex-col  ${
-        centerX ? "items-center" : ""
-      }  ${centerY ? "justify-center" : ""} ${
-        Hscreen ? "h-screen" : ""
-      } ${className}`}
+      className={
+        "min-h-screen flex flex-col " +
+        " " +
+        (centerX ? "items-center" : "") +
+        " " +
+        (centerY ? "justify-center " : "") +
+        " " +
+        (Hscreen ? "h-screen" : "") +
+        " " +
+        className
+      }
     >
       {children}
     </div>
