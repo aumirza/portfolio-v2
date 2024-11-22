@@ -1,8 +1,8 @@
 import React from "react"
 import ReactMarkdown from "react-markdown"
 import ScrollAnimation from "react-animate-on-scroll"
-import { FullSection } from "../layouts/FullSection"
 import { useAboutQuery } from "../../hooks/useAboutQuery"
+import { FullSection } from "../layouts/FullSection"
 
 export const AboutSection = () => {
   const { text, image } = useAboutQuery()

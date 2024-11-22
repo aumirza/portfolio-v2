@@ -11,7 +11,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <ProjectSection />
       <HireMe />
       <TestimonialSection />

@@ -16,4 +16,4 @@ const about = () => {
 }
 
 export default about
-export const Head = () => <Seo title="Contact" />
+export const Head = () => <Seo title="About me" />
