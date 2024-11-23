@@ -91,7 +91,7 @@ collections:
         }
       - {
           label: "Is Current",
-          name: "is_current",
+          name: "isCurrent",
           widget: "boolean",
           default: false,
         }

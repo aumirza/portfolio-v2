@@ -12,6 +12,7 @@ export const useSkillsQuery = () => {
               icon
               type
               level
+              isCurrent
             }
           }
         }
