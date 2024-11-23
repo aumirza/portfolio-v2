@@ -36,15 +36,14 @@ export const useProjectsQuery = () => {
       }
     }
   `)
-  const techStack = data.allTechStacks.techStack
-
+  const allTechStacks = data.allTechStacks.techStack
   let projects = data.allProjects.projects
 
   projects = projects.map(edge => {
-    edge.project.fields.tech_stack = edge.project.fields.tech_stack?.map(
-      tech => {
-        const techData = techStack.find(
-          techStack => techStack.tech.fields.name === tech
+    edge.project.fields.techStack = edge.project.fields.tech_stack?.map(
+      techName => {
+        const techData = allTechStacks.find(
+          node => node.tech.fields.name === techName
         )
         return {
           name: techData?.tech.fields.name,
