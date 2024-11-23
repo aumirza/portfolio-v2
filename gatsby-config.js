@@ -12,7 +12,7 @@ module.exports = {
     title: `Ahmadullah Mirza`,
     description: `Ahmadullah Mirza's personal website`,
     author: `@ahmadullahmirza`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://ahmadullah.in/`,
   },
   plugins: [
     `gatsby-plugin-image`,

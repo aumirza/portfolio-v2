@@ -3,7 +3,7 @@ import { useExperienceQuery } from "../../hooks/useExperienceQuery"
 import { FullSection } from "../layouts/FullSection"
 import ScrollAnimation from "react-animate-on-scroll"
 import ReactMarkdown from "react-markdown"
-import { markdowComponents } from "../../utils/markdownComponents"
+import { markdownComponents } from "../markdownComponents"
 
 export const ExperienceSection = () => {
   const { experiences } = useExperienceQuery()
@@ -55,7 +55,7 @@ export const ExperienceSection = () => {
                   <h4 className="ml-1 text-xl font-medium">
                     {exp.institution}
                   </h4>
-                  <ReactMarkdown components={markdowComponents}>
+                  <ReactMarkdown components={markdownComponents}>
                     {exp.description}
                   </ReactMarkdown>
                 </div>

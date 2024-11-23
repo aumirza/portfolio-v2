@@ -1,7 +1,11 @@
 import React from "react"
 
 export const markdownComponents = {
-  h1: ({ node, ...props }) => <h1 className="text-2xl font-bold" {...props} />,
+  h1: ({ node, children, ...props }) => (
+    <h1 className="text-2xl font-bold" {...props}>
+      {children}
+    </h1>
+  ),
   ol: ({ node, ...props }) => (
     <ol className="pl-5 my-2 list-decimal list-inside" {...props} />
   ),
