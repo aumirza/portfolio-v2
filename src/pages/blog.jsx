@@ -1,15 +1,14 @@
 import React from "react"
 import { Seo } from "../components/Seo"
 import { Layout } from "../components/Layout"
-import { ApolloProvider } from "@apollo/client"
-import apolloClient from "../lib/appoloClient"
 import { BlogsGrid } from "../components/BlogsGrid"
 import { FullSection } from "../components/layouts/FullSection"
+import { ApolloWrapper } from "../components/ApolloWrapper"
 
 const blog = () => {
   return (
     <Layout className="py-10 pt-20">
-      <ApolloProvider client={apolloClient}>
+      <ApolloWrapper>
         <FullSection>
           <div className="flex justify-center my-10">
             <h2 className="mb-2 text-4xl font-bold border-b-4 text-secondary dark:text-white border-primary">
@@ -26,7 +25,7 @@ const blog = () => {
             </a>
           </div>
         </FullSection>
-      </ApolloProvider>
+      </ApolloWrapper>
     </Layout>
   )
 }
