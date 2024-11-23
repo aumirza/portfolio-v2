@@ -20,7 +20,7 @@ const blog = () => {
           <div className="my-5">
             <a
               className="px-3 py-2 transition-all ease-in-out border-2 text-primary border-primary hover:bg-primary hover:text-secondary"
-              href="blog.ahmadullah.in"
+              href="htps://blog.ahmadullah.in"
             >
               View All on Hashnode
             </a>

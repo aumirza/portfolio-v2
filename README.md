@@ -50,15 +50,15 @@ About me and my projects.
 - [ ] Add Loading page
 - [ ] Scroll to top button
 - [ ] Projects filter
-- [ ] Create Service section
 - [ ] Projects search
 - [ ] Projects pagination
+- [ ] Create Service section
 
 ## Fix
 
 - [x] Breaking Testimonials slider in Mobile
 - [x] Scroll Down button not working
-- [ ] Fix Page title in mobile
+- [x] Fix Page title in mobile
 
 ## Add data
 
@@ -67,8 +67,9 @@ About me and my projects.
 - [x] Add Qualifications
 - [x] Add Projects
 - [x] Add Social Links
-- [ ] Add Services
+- [x] Add blog from hashnode
 - [ ] Add Resume
+- [ ] Add Services
 
 # Setup
 
