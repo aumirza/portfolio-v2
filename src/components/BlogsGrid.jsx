@@ -13,6 +13,7 @@ const GET_BLOGS_QUERY = gql`
             id
             slug
             title
+            url
             coverImage {
               url
             }
@@ -59,39 +60,41 @@ export const BlogsGrid = () => {
     <div className="grid w-11/12 grid-cols-1 gap-5 mx-auto md:grid-cols-2 lg:grid-cols-3">
       {data.publication.posts.edges.map(post => {
         return (
-          <div
-            className="flex flex-col p-2 text-black rounded shadow bg-card"
-            key={post.node.id}
-          >
-            <div className="flex items-center justify-center p-3">
-              <img
-                className="w-full rounded h-52"
-                src={
-                  post.node.coverImage
-                    ? post.node.coverImage.url
-                    : noImageAvailable
-                }
-                alt={post.node.title}
-              />
-            </div>
-            <div className="flex flex-col justify-between flex-grow gap-2 mt-2">
-              <h3 className="text-xl font-medium text-center">
-                {post.node.title}
-              </h3>
-              <div className="bottom-0 flex gap-2 ">
-                {post.node.tags.map(tag => {
-                  return (
-                    <div
-                      className="px-1 py-0.5 text-sm rounded bg-primary"
-                      key={tag.name}
-                    >
-                      #{tag.name}
-                    </div>
-                  )
-                })}
+          <a href={post.node.url} target="_blank">
+            <div
+              className="flex flex-col p-2 text-black rounded shadow bg-card"
+              key={post.node.id}
+            >
+              <div className="flex items-center justify-center p-3">
+                <img
+                  className="w-full rounded h-52"
+                  src={
+                    post.node.coverImage
+                      ? post.node.coverImage.url
+                      : noImageAvailable
+                  }
+                  alt={post.node.title}
+                />
+              </div>
+              <div className="flex flex-col justify-between flex-grow gap-2 mt-2">
+                <h3 className="text-xl font-medium text-center">
+                  {post.node.title}
+                </h3>
+                <div className="bottom-0 flex gap-2 ">
+                  {post.node.tags.map(tag => {
+                    return (
+                      <div
+                        className="px-1 py-0.5 text-sm rounded bg-primary"
+                        key={tag.name}
+                      >
+                        #{tag.name}
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         )
       })}
     </div>
