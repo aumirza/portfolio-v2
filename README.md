@@ -46,30 +46,24 @@ About me and my projects.
 - [x] Mobile navigation
 - [x] Add 404 page
 - [x] Dynamic Contact form
-- [ ] Add manifest (PWA)
-- [ ] Add Loading page
+- [x] Add manifest (PWA)
+- [x] Add Loading page
+- [x] Add blog from hashnode
 - [ ] Scroll to top button
 - [ ] Projects filter
 - [ ] Projects search
 - [ ] Projects pagination
 - [ ] Create Service section
 
-## Fix
-
-- [x] Breaking Testimonials slider in Mobile
-- [x] Scroll Down button not working
-- [x] Fix Page title in mobile
-
 ## Add data
 
 - [x] Add About Me
-- [x] Add Skills
 - [x] Add Qualifications
-- [x] Add Projects
+- [x] Add Experience
 - [x] Add Social Links
-- [x] Add blog from hashnode
-- [ ] Add Resume
-- [ ] Add Services
+- [ ] Add Skills
+- [ ] Add Projects
+- [ ] Add Resume url
 
 # Setup
 

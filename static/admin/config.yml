@@ -89,6 +89,12 @@ collections:
           valueField: "name",
           displayFields: ["name"],
         }
+      - {
+          label: "Is Current",
+          name: "is_current",
+          widget: "boolean",
+          default: false,
+        }
       - { label: "Level", name: "level", widget: "number", min: 1, max: 100 }
 
   - name: "Qualifications"
