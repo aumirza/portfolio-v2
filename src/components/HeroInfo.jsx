@@ -17,6 +17,7 @@ export const HeroInfo = () => {
               subtitle
               description
               avatar
+              resume
             }
           }
         }
@@ -24,7 +25,7 @@ export const HeroInfo = () => {
     }
   `)
 
-  const { title, subtitle, description } =
+  const { title, subtitle, description, resume } =
     data.allMarkdownRemark.edges[0].node.fields
 
   return (
@@ -71,9 +72,12 @@ export const HeroInfo = () => {
           >
             Hire me
           </ScrollLink>
-          <button className="h-full px-4 py-2 ml-2 transition-all ease-in-out border-2 rounded-md text-primary hover:text-secondary border-primary hover:bg-primary ">
+          <a
+            className="h-full px-4 py-2 ml-2 transition-all ease-in-out border-2 rounded-md text-primary hover:text-secondary border-primary hover:bg-primary "
+            href={resume ?? "#"}
+          >
             Download CV
-          </button>
+          </a>
         </div>
       </ScrollAnimation>
     </div>
