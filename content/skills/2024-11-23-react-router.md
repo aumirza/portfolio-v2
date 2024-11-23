@@ -1,6 +1,6 @@
 ---
-name: React router
-icon: /img/reactrouter-original.svg
-type: Frontend
+name: "Typescript "
+icon: /img/typescript-original.svg
+type: Backend
 level: 1
 ---
