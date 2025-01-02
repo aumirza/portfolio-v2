@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
 
 export const Logo = ({ className }) => {
@@ -22,12 +22,12 @@ export const Logo = ({ className }) => {
   const { text_logo } = data.allMarkdownRemark.edges[0].node.fields
 
   return (
-    <div className="">
+    <Link to="/" className="">
       <span
         className={"uppercase text-2xl text-primary p-2 underline " + className}
       >
         {text_logo}
       </span>
-    </div>
+    </Link>
   )
 }
