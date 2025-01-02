@@ -1,17 +1,21 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Snowfall from "react-snowfall"
 import snowflake from "../images/white-snowflake.png"
 
 const isWinter = [11, 12, 0, 1].includes(new Date().getMonth())
 
 export default function SnowFall() {
-  const {} = useState()
+  const [snowflakeImage, setSnowflakeImage] = useState(null)
 
-  const snowflakeImage = new Image()
-  snowflakeImage.src = snowflake
+  useEffect(() => {
+    const snowflakeImage = new Image()
+    snowflakeImage.src = snowflake
+    setSnowflakeImage(snowflakeImage)
+  }, [])
 
   return (
-    isWinter && (
+    isWinter &&
+    snowflakeImage && (
       <Snowfall
         images={[snowflakeImage]}
         snowflakeCount={100}
