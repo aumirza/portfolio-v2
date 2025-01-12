@@ -1,11 +1,11 @@
 ---
-title: GH landing
-date: 2023-01-12T22:38:00.000Z
-description: Landing page for all your public repos.
-cover: /img/gh-landing.png
-url: https://gh.ahmadullah.in/
-source: https://github.com/aumirza/gh-landing
+title: Webmanifest Pro
+date: 2023-01-25T22:40:00.000Z
+description: Manifest generator for your WebApp. It generates all different size images.
+cover: /img/webmanifest-pro.png
+url: https://webmanifest-pro.vercel.app/
+source: https://github.com/aumirza/webmanifest-pro
 tech_stack:
-  - React
+  - Nextjs
 featured: false
 ---
