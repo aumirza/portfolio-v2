@@ -11,5 +11,5 @@ url: https://gh.ahmadullah.in/webrtc-videochat/
 source: https://github.com/aumirza/webrtc-videochat
 tech_stack:
   - React
-featured: true
+featured: false
 ---
