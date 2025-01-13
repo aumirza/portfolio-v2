@@ -1,7 +1,7 @@
 ---
 name: Typescript
-icon: /img/typescript-original.svg
+icon: /img/typescript-plain.svg
 type: Backend
-level: 1
 isCurrent: true
+level: 1
 ---
