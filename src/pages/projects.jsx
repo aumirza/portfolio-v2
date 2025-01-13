@@ -13,7 +13,7 @@ const Projects = () => {
   useEffect(() => {
     if (!projectsData) return
     setProjects(projectsData)
-  }, [projectsData])
+  }, [])
 
   return (
     <Layout className="pt-20">
