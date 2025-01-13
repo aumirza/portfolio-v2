@@ -1,20 +1,19 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { ProjectGridCard } from "../components/ProjectGridCard"
 import { useProjectsQuery } from "../hooks/useProjectsQuery"
 import { Seo } from "../components/Seo"
 import ScrollAnimation from "react-animate-on-scroll"
+import { ProjectsFilter } from "../components/ProjectsFilter"
 
 const Projects = () => {
-  const projects = useProjectsQuery()
-  const allStacks = projects
-    .map(edge => edge.project.fields.techStack)
-    .filter(tech => tech !== undefined)
-    .flat()
+  const [projects, setProjects] = useState([])
+  const projectsData = useProjectsQuery()
 
-  const uniqueStack = Array.from(
-    new Set(allStacks.map(item => JSON.stringify(item)))
-  ).map(item => JSON.parse(item))
+  useEffect(() => {
+    if (!projectsData) return
+    setProjects(projectsData)
+  }, [projectsData])
 
   return (
     <Layout className="pt-20">
@@ -24,17 +23,8 @@ const Projects = () => {
         </h1>
       </div>
 
-      <div className="flex flex-wrap justify-center max-w-lg mx-auto my-10">
-        {uniqueStack.map(stack => (
-          <div className="flex gap-0.5 bg-card rounded-full p-2 py-1 cursor-pointer">
-            <img
-              className="size-6 filter brightness-0"
-              src={stack.icon}
-              alt={stack.name}
-            />
-            <p className="text-sm text-gray-900">{stack.name}</p>
-          </div>
-        ))}
+      <div className="max-w-lg mx-auto my-10">
+        <ProjectsFilter projectsData={projectsData} setProjects={setProjects} />
       </div>
 
       <div className="grid max-w-6xl grid-cols-1 gap-10 mx-auto mb-10 md:grid-cols-2 lg:grid-cols-3 ">
