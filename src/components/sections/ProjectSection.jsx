@@ -1,15 +1,15 @@
 import { Link } from "gatsby"
 import React from "react"
 import ScrollAnimation from "react-animate-on-scroll"
-import { useProjectsQuery } from "../../hooks/useProjectsQuery"
 import { ProjectCard } from "../ProjectCard"
+import { useFeaturedProjectsQuery } from "../../hooks/useFeaturedProjectsQuery"
 
 export const ProjectSection = () => {
-  const projects = useProjectsQuery()
+  const projects = useFeaturedProjectsQuery()
   return (
     <div className="flex flex-col items-center mt-20">
       <ScrollAnimation animateIn="fadeInTop" animateOnce={true} duration={1}>
-        <h1 className="text-2xl md:text-4xl font-bold pb-2 border-b-2 border-primary mb-5 md:mb-10">
+        <h1 className="pb-2 mb-5 text-2xl font-bold border-b-2 md:text-4xl border-primary md:mb-10">
           Some Featured Projects
         </h1>
       </ScrollAnimation>
@@ -26,7 +26,7 @@ export const ProjectSection = () => {
       <div className="">
         <Link
           to="/projects"
-          className="border hover:bg-primary hover:text-secondary border-primary text-primary py-2 px-3 rounded-md"
+          className="px-3 py-2 border rounded-md hover:bg-primary hover:text-secondary border-primary text-primary"
         >
           <span className="text-base">View All</span>
         </Link>
