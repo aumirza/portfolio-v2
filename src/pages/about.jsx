@@ -9,10 +9,12 @@ import { ExperienceSection } from "../components/sections/ExperienceSection"
 const about = () => {
   return (
     <Layout>
-      <AboutSection />
-      <SkillsSection />
-      <ExperienceSection />
-      <QualificationSection />
+      <div className="w-11/12 mx-auto max-w-7xl">
+        <AboutSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <QualificationSection />
+      </div>
     </Layout>
   )
 }
