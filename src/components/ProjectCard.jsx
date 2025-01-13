@@ -16,10 +16,10 @@ export const ProjectCard = ({ project, rtl, className }) => {
             rtl ? "md:col-start-6" : "md:col-end-8"
           }`}
         >
-          <div className="md:z-10 group rounded-md h-72 w-full ">
+          <div className="w-full rounded-md md:z-10 group h-72 ">
             {/* //bg-secondary md:hover:bg-transparent */}
             <img
-              className="h-full object-cover w-full mix-blend-multiply rounded-md "
+              className="object-cover w-full h-full rounded-md mix-blend-multiply "
               // md:group-hover:grayscale-0 md:group-hover:brightness-100 grayscale brightness-90
               src={cover}
               alt={title}
@@ -44,8 +44,13 @@ export const ProjectCard = ({ project, rtl, className }) => {
               <span>Featured project</span>
             </div>
             <h1 className="z-20 text-2xl">{project.title}</h1>
-            <div className="z-20 my-3 bg-primary text-secondary h-28 w-full rounded-md shadow-lg p-5">
-              <p className="text-sm">
+            <div
+              className={
+                "z-20 flex flex-col w-full p-5 my-3 rounded-md shadow-lg bg-primary text-secondary h-28 " +
+                (rtl ? "" : "md:items-end")
+              }
+            >
+              <p className="flex-grow text-sm">
                 {description && description.length > 150
                   ? description.substring(0, 150) +
                     " ... " +
@@ -55,17 +60,22 @@ export const ProjectCard = ({ project, rtl, className }) => {
                     )
                   : description}
               </p>
+              <div className="z-20 flex gap-2">
+                {project.techStack
+                  ? project.techStack.map((tech, i) => (
+                      <div className="px-1" key={i + tech.name}>
+                        <img
+                          className="size-5 brightness-0"
+                          src={tech.icon}
+                          alt=""
+                        />
+                      </div>
+                    ))
+                  : null}
+              </div>
             </div>
-            <div className="flex z-20">
-              {project.tech_stack
-                ? project.tech_stack.map((tech, i) => (
-                    <div className="px-1" key={i + tech.name}>
-                      <span>{tech.name}</span>
-                    </div>
-                  ))
-                : null}
-            </div>
-            <div className="z-20 w-1/6 mt-2 flex justify-between">
+
+            <div className="z-20 flex justify-between w-1/6 mt-2">
               {project.source && (
                 <a href={project.source} target="_blank" rel="noreferrer">
                   <FaGithub className="text-xl text-primary" />
