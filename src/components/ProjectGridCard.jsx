@@ -34,7 +34,7 @@ export const ProjectGridCard = ({ project }) => {
       </div>
       <div className="flex justify-center w-full gap-2">
         {techStack?.map(({ name, icon }) => (
-          <div className="flex gap-0.5">
+          <div key={name} className="flex gap-0.5">
             <img
               className="size-6 filter brightness-0 "
               src={icon}
@@ -46,14 +46,14 @@ export const ProjectGridCard = ({ project }) => {
       </div>
       <div className="flex items-center justify-around flex-grow w-full gap-10">
         {project.source && (
-          <Button>
+          <Button theme="secondary">
             <a href={project.source} target="_blank" rel="noreferrer">
               <FaGithub className="text-3xl" />
             </a>
           </Button>
         )}
         {project.url && (
-          <Button>
+          <Button theme="secondary">
             <a href={project.url}>
               <span className="text-lg">View</span>
             </a>

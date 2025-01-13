@@ -1,11 +1,11 @@
 import React from "react"
 
-export const SkillCircle = ({ name, icon, level, imageClassName }) => {
+export const SkillCircle = ({ name, icon, level, className }) => {
   return (
     <div className="flex flex-col items-center hover:cursor-pointer hover:scale-105">
       <div className="flex items-center justify-center mb-1 rounded bg-card w-14 h-14 md:w-16 md:h-16">
         <img
-          className={"w-10 h-10 md:h-12 md:w-12" + " " + imageClassName}
+          className={"w-10 h-10 md:h-12 md:w-12" + " " + className}
           src={icon}
           alt={name}
         />
