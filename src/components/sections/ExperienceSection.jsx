@@ -8,7 +8,7 @@ import { markdownComponents } from "../markdownComponents"
 export const ExperienceSection = () => {
   const { experiences } = useExperienceQuery()
   return (
-    <FullSection className="my-10" centerY={false}>
+    <FullSection id="experience" className="my-10 scroll-m-28" centerY={false}>
       <div className="mb-10">
         <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
           <h2 className="mb-2 text-2xl font-bold border-b-2 md:text-3xl border-primary">

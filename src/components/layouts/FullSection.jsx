@@ -1,6 +1,7 @@
 import React from "react"
 
 export const FullSection = ({
+  id,
   children,
   className,
   centerX = true,
@@ -9,6 +10,7 @@ export const FullSection = ({
 }) => {
   return (
     <div
+      id={id}
       className={
         "min-h-screen flex flex-col " +
         " " +

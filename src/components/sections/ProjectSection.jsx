@@ -6,6 +6,7 @@ import { useFeaturedProjectsQuery } from "../../hooks/useFeaturedProjectsQuery"
 
 export const ProjectSection = () => {
   const projects = useFeaturedProjectsQuery()
+
   return (
     <div className="flex flex-col items-center mt-20">
       <ScrollAnimation animateIn="fadeInTop" animateOnce={true} duration={1}>
@@ -14,14 +15,15 @@ export const ProjectSection = () => {
         </h1>
       </ScrollAnimation>
       <div className="w-11/12">
-        {projects.map((edge, i) => (
-          <ProjectCard
-            className="mb-5 md:mb-10"
-            key={edge.project.id}
-            rtl={i % 2}
-            project={edge.project.fields}
-          />
-        ))}
+        {projects &&
+          projects.map((edge, i) => (
+            <ProjectCard
+              className="mb-5 md:mb-10"
+              key={edge.project.id}
+              rtl={i % 2}
+              project={edge.project.fields}
+            />
+          ))}
       </div>
       <div className="">
         <Link
