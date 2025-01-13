@@ -3,12 +3,12 @@ import ScrollAnimation from "react-animate-on-scroll"
 import { SkillCircle } from "../SkillCircle"
 import { useSkillsQuery } from "../../hooks/useSkillsQuery"
 
-Array.prototype.filterAndDifferntiate = function (cb) {
+function filterAndDifferntiate(array, cb) {
   const filtered = []
   const remaining = []
-  for (let index = 0; index < this.length; index++) {
-    const element = this[index]
-    if (cb(element, index, this)) {
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index]
+    if (cb(element, index, array)) {
       filtered.push(element)
     } else {
       remaining.push(element)
@@ -20,10 +20,10 @@ Array.prototype.filterAndDifferntiate = function (cb) {
 export const SkillsSection = () => {
   const { skills } = useSkillsQuery()
 
-  const [currentSkills, remaining] = skills.filterAndDifferntiate(
+  const [currentSkills, remaining] = filterAndDifferntiate(
+    skills,
     skill => skill.isCurrent
   )
-  console.log(currentSkills, remaining)
 
   return (
     <div className="flex flex-col items-center justify-center my-20">
