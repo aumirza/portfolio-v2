@@ -2,7 +2,7 @@
   "name": "portfolio-v2",
   "private": true,
   "description": "My portfolio to showcase my works and skills.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Ahmadullah Mirza <mirzaahmad9028.am@gmail.com>",
   "dependencies": {
     "@apollo/client": "3.5.10",
