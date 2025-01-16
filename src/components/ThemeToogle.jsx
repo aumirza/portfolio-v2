@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react"
 import { FiMoon, FiSun } from "react-icons/fi"
+import { isWinter } from "../constants"
 
 export const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(true)
 
   const darkModeHandler = e => {
+    if (isWinter) {
+      // alert notify
+      return
+    }
+
     setDarkMode(darkMode => !darkMode)
   }
 
   useEffect(() => {
+    if (!document) return
     document.documentElement.classList.toggle("dark", darkMode)
     sessionStorage.setItem("darkMode", darkMode)
   }, [darkMode])

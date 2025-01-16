@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Snowfall from "react-snowfall"
 import snowflake from "../images/white-snowflake.png"
-
-const isWinter = [11, 12, 0, 1].includes(new Date().getMonth())
+import { isWinter } from "../constants"
 
 export default function SnowFall() {
   const [snowflakeImage, setSnowflakeImage] = useState(null)
