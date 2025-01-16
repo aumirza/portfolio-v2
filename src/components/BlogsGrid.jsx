@@ -60,7 +60,7 @@ export const BlogsGrid = () => {
     <div className="grid w-11/12 grid-cols-1 gap-5 mx-auto md:grid-cols-2 lg:grid-cols-3">
       {data.publication.posts.edges.map(post => {
         return (
-          <a href={post.node.url} target="_blank">
+          <a href={post.node.url} key={post.node.id} target="_blank">
             <div
               className="flex flex-col p-2 text-black rounded shadow bg-card"
               key={post.node.id}
