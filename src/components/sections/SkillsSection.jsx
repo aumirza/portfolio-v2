@@ -47,7 +47,7 @@ export const SkillsSection = () => {
                 key={id}
                 animateIn="zoomIn"
                 animateOnce={true}
-                delay={500}
+                delay={100}
               >
                 <SkillCircle
                   className="brightness-75 saturate-100"
@@ -68,7 +68,7 @@ export const SkillsSection = () => {
               <ScrollAnimation
                 animateIn="zoomIn"
                 animateOnce={true}
-                delay={500}
+                delay={200}
                 key={id}
               >
                 <SkillCircle
@@ -84,10 +84,13 @@ export const SkillsSection = () => {
       </div>
 
       <div>
-        <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeIn" delay={300} animateOnce={true}>
           <Button className="py-2" asChild>
             <Link to="/about#experience">
-              View my work experience and educational qualification
+              View my work experience
+              <span className="hidden md:inline">
+                and educational qualification
+              </span>
             </Link>
           </Button>
         </ScrollAnimation>

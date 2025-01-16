@@ -12,18 +12,18 @@ export const HeroSection = () => {
   return (
     <FullSection>
       <div className="h-[90vh] pt-14 w-11/12 flex items-center">
-        <div className="flex-grow h-full flex flex-col justify-around">
+        <div className="flex flex-col justify-around flex-grow h-full">
           <ScrollAnimation
             animateIn="fadeIn"
             animateOnce={true}
             duration={1}
-            delay={2500}
+            delay={1400}
           >
             <SocialVertical />
           </ScrollAnimation>
           <div className="md:hidden"></div>
         </div>
-        <div className="md:flex-grow flex flex-col-reverse md:flex-row items-center md:justify-around">
+        <div className="flex flex-col-reverse items-center md:flex-grow md:flex-row md:justify-around">
           <HeroInfo />
           <AvatarImage />
         </div>
@@ -32,7 +32,7 @@ export const HeroSection = () => {
         <ScrollAnimation
           offset={0}
           animateIn="bounceInUp"
-          delay={3000}
+          delay={1800}
           animateOnce={true}
           duration={1}
         >
