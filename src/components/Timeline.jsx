@@ -9,12 +9,12 @@ export const Timeline = ({ timelines }) => {
         <div className="border-2 absolute border-primary h-full left-[50%]"></div>
         {timelines.map((timeline, i) => (
           <ScrollAnimation
+            key={timeline.id}
             animateIn={i % 2 ? "fadeInLeft" : "fadeInRight"}
             animateOnce={true}
           >
             <TimelineCard
               timeline={timeline.fields}
-              key={timeline.id}
               rtl={i % 2}
               index={i + 1}
             />
