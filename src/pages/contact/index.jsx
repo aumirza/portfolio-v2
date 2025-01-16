@@ -10,15 +10,17 @@ const contact = () => {
   return (
     <Layout className="pt-10 pb-5">
       <FullSection>
-        <div className="mt-10 flex justify-center md:my-10">
-          <h1 className="text-4xl mb-5">Contact</h1>
+        <div className="flex justify-center mt-10 md:my-10">
+          <h2 className="mb-2 text-4xl font-bold border-b-4 text-secondary dark:text-white border-primary">
+            Contact
+          </h2>
         </div>
 
-        <div className="flex flex-col-reverse md:flex-row rounded-lg max-w-4xl ">
+        <div className="flex flex-col-reverse max-w-4xl rounded-lg md:flex-row ">
           <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
             <ContactForm />
           </ScrollAnimation>
-          <ContactDetails className="md:ml-10 px-5" />
+          <ContactDetails className="px-5 md:ml-10" />
         </div>
       </FullSection>
     </Layout>

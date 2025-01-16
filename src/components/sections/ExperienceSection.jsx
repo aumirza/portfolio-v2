@@ -22,7 +22,7 @@ export const ExperienceSection = () => {
         <div className="flex flex-col gap-5">
           {experiences.map(exp => (
             <div className="flex items-center gap-10">
-              <div className="-ml-[3.9rem] rounded-full size-8 bg-primary border-secondary border-2"></div>
+              <div className="-ml-[3.8rem]  rounded-full size-8 bg-primary border-white dark:border-secondary border-2"></div>
               <ScrollAnimation
                 className="w-full"
                 animateIn={"fadeInLeft"}

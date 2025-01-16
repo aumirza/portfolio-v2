@@ -25,7 +25,7 @@ export const SocialVertical = () => {
   const { twitter, github, linkedin } =
     data.allMarkdownRemark.edges[0].node.fields
   return (
-    <div className="px-2 space-y-4 text-3xl text-white md:px-5">
+    <div className="px-2 space-y-4 text-3xl text-secondary dark:text-white md:px-5">
       <div className="hover:text-primary">
         <a href={github}>
           <FaGithub />

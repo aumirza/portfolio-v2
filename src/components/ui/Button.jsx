@@ -11,14 +11,14 @@ export const Button = ({
     throw new Error("Button component requires children when not using asChild")
   }
   let className =
-    "px-8 py-1 text-white transition-all duration-100 ease-in-out border-2 border-white rounded-full hover:bg-white hover:text-secondary"
+    "px-8 py-1 transition-all duration-200 ease-in-out border-2 rounded-full border-secondary dark:border-white text-secondary dark:text-white dark:hover:bg-white dark:hover:text-secondary hover:bg-secondary hover:text-white"
 
   if (theme === "primary") {
     className =
-      "px-8 py-1 transition-all duration-100 ease-in-out border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-secondary"
+      "px-8 py-1 transition-all duration-200 ease-in-out border-2 rounded-full text-primary border-primary hover:bg-primary hover:text-secondary"
   } else if (theme === "secondary") {
     className =
-      "px-8 py-1 transition-all duration-100 ease-in-out border-2 rounded-full text-secondary border-secondary hover:bg-secondary hover:text-white"
+      "px-8 py-1 transition-all duration-200 ease-in-out border-2 rounded-full text-secondary border-secondary hover:bg-secondary hover:text-white"
   }
 
   if (asChild) {
