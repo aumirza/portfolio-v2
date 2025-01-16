@@ -2,7 +2,7 @@ import React from "react"
 
 export const ContactDetailCard = ({ Icon, title, text }) => {
   return (
-    <div className="flex justify-center text-white items-center rounded-md flex-col mb-3 py-5 px-7 dark:bg-secondaryLight bg-primary hover:scale-105 ease-in">
+    <div className="flex flex-col items-center justify-center py-5 mb-3 ease-in rounded-md text-secondary px-7 bg-primary hover:scale-105">
       <Icon className="text-3xl" />
       <span className="text-lg">{title}</span>
       <span> {text}</span>

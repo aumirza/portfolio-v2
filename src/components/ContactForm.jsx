@@ -19,7 +19,7 @@ export const ContactForm = () => {
       <div>
         <button
           type="submit"
-          className="bg-primary hover:bg-white text-white dark:hover:bg-secondary hover:text-primary border-primary border-2 duration-300 dark:text-secondary  py-2 w-full rounded-md ease-in-out transition-all"
+          className="w-full py-2 transition-all duration-300 ease-in-out border-2 rounded-md bg-primary hover:bg-white dark:hover:bg-secondary hover:text-primary border-primary text-secondary"
         >
           <span className="text-base font-bold">Send</span>
         </button>
