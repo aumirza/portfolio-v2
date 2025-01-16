@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 import { TestimonialCard } from "../TestimonialCard"
+import ScrollAnimation from "react-animate-on-scroll"
 
 export const TestimonialSection = () => {
   const data = useStaticQuery(graphql`
@@ -33,10 +34,12 @@ export const TestimonialSection = () => {
   const testimonials = data.allMarkdownRemark.edges
 
   return (
-    <FullSection>
-      <div className="mb-14">
-        <h1 className="text-3xl">Testimonials</h1>
-      </div>
+    <section className="flex flex-col items-center justify-center mb-20">
+      <ScrollAnimation animateIn="fadeInTop" animateOnce={true} duration={1}>
+        <h1 className="pb-2 mb-5 text-2xl font-bold border-b-2 md:text-4xl border-primary md:mb-10">
+          Testimonials
+        </h1>
+      </ScrollAnimation>
       <div className="w-10/12">
         <Slider
           dots={true}
@@ -86,6 +89,6 @@ export const TestimonialSection = () => {
           ))}
         </Slider>
       </div>
-    </FullSection>
+    </section>
   )
 }
