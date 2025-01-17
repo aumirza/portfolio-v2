@@ -31,7 +31,7 @@ export const ProjectCard = ({ project, rtl, className }) => {
           animateIn={rtl ? "fadeInLeft" : "fadeInRight"}
           animateOnce={true}
           duration={1}
-          className={`text-secondary dark:text-white font-bold row-start-1 col-start-1  md:col-span-7 ${
+          className={`text-secondary dark:md:text-white font-bold row-start-1 col-start-1  md:col-span-7 ${
             rtl ? "md:col-end-7" : "md:col-start-6"
           }`}
         >
