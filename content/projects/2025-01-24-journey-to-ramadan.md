@@ -1,12 +1,12 @@
 ---
-title: Journey to Ramadan
-date: 2025-01-15T20:59:00.000Z
-description: Your journey to Ramadan made easy with a countdown, duas, and preparation tips.
-cover: /img/journey-to-ramadan.png
-url: https://to-ramadan.vercel.app/
-source: https://github.com/aumirza/to-ramadan
+title: DevGallery
+date: 2025-01-23T21:05:00.000Z
+description: A gallery for developers by developers.
+cover: /img/dev-gallery.png
+url: https://gh.ahmadullah.in/
+source: https://github.com/aumirza/dev-gallery
 tech_stack:
   - React
   - Tailwindcss
-featured: false
+featured: true
 ---
