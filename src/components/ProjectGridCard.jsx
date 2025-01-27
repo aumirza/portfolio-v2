@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa"
 import { Button } from "./ui/Button"
 
 export const ProjectGridCard = ({ project }) => {
-  const { title, description, cover, techStack } = project
+  const { title, description, cover, techStack, icon } = project
 
   return (
     <div className="w-[22rem] h-[28rem] mx-auto p-5 gap-2  bg-card text-gray-950 rounded-xl shadow-md hover:-translate-y-3 hover:shadow-xl flex flex-col items-center transition-all ease-in-out duration-500">
@@ -16,6 +16,11 @@ export const ProjectGridCard = ({ project }) => {
           alt={title}
         />
       </div>
+      {icon && (
+        <div className="z-20 p-2 -mt-20 bg-white border border-gray-500 rounded-full">
+          <img className="size-20" src={icon} alt={title} />
+        </div>
+      )}
 
       <div className="">
         <h1 className="text-2xl font-semibold">{title}</h1>
@@ -32,15 +37,22 @@ export const ProjectGridCard = ({ project }) => {
               : "")}
         </p>
       </div>
-      <div className="flex justify-center w-full gap-2">
+      <div className="relative flex justify-center w-full gap-2">
         {techStack?.map(({ name, icon }) => (
-          <div key={name} className="flex gap-0.5">
-            <img
-              className="size-6 filter brightness-0 "
-              src={icon}
-              alt={name}
-            />
-            {/* <p className="text-sm text-gray-900">{name}</p> */}
+          <div className="group">
+            <div className="absolute hidden p-1 px-2 -mt-8 text-sm text-white rounded-full group-hover:flex bg-secondary">
+              <p className="text-xs">{name}</p>
+            </div>
+            <div
+              key={name}
+              className="flex gap-0.5 cursor-pointer hover:scale-105 transition-all"
+            >
+              <img
+                className="size-6 filter brightness-0 "
+                src={icon}
+                alt={name}
+              />
+            </div>
           </div>
         ))}
       </div>

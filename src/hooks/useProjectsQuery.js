@@ -30,6 +30,8 @@ export const useProjectsQuery = () => {
                 cover
                 description
                 source
+                icon
+                category
                 url
                 tech_stack
               }
