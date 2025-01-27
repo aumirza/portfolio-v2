@@ -29,7 +29,7 @@ export const ExperienceSection = () => {
                 animateOnce={true}
               >
                 <div
-                  className="p-4 rounded shadow text-secondary bg-primary"
+                  className="p-4 rounded shadow text-secondary bg-card"
                   key={exp.id}
                 >
                   <div className="flex justify-between">

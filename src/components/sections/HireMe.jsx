@@ -7,7 +7,7 @@ export const HireMe = () => {
 
   return (
     <div id="hireme" className="flex justify-center my-10 md:h-96">
-      <div className="flex flex-col-reverse justify-around w-10/12 h-full p-5 text-white shadow-lg md:flex-row bg-secondary dark:bg-primary dark:text-secondary rounded-2xl">
+      <div className="flex flex-col-reverse justify-around w-10/12 h-full p-5 text-white shadow-lg md:flex-row bg-secondary dark:bg-card dark:text-secondary rounded-2xl">
         <div className="flex flex-col justify-center">
           <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
             <div className="flex items-end mb-1">
