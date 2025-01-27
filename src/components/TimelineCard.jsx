@@ -13,7 +13,7 @@ export const TimelineCard = ({ timeline, rtl, index }) => {
       <div className="z-20 flex items-center order-1 w-6 h-6 text-white rounded-full shadow-xl bg-primary dark:text-secondary md:w-8 md:h-8">
         <h1 className="mx-auto font-semibold md:text-lg">{index}</h1>
       </div>
-      <div className="order-1 bg-primary text-secondary rounded-lg shadow-xl w-[45%] p-2  md:px-6 md:py-4">
+      <div className="order-1 bg-card text-secondary rounded-lg shadow-xl w-[45%] p-2  md:px-6 md:py-4">
         <h3 className="mb-1 text-sm font-bold md:text-xl">{timeline.title}</h3>
         <p className="mb-3 text-xs tracking-wide text-opacity-100 md:text-base">
           {timeline.institution}
