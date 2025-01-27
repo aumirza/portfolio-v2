@@ -39,7 +39,7 @@ export const ProjectGridCard = ({ project }) => {
       </div>
       <div className="relative flex justify-center w-full gap-2">
         {techStack?.map(({ name, icon }) => (
-          <div className="group">
+          <div className="group" key={name}>
             <div className="absolute hidden p-1 px-2 -mt-8 text-sm text-white rounded-full group-hover:flex bg-secondary">
               <p className="text-xs">{name}</p>
             </div>

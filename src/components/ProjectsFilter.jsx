@@ -36,23 +36,25 @@ export const ProjectsFilter = ({ projectsData, setProjects }) => {
 
   return (
     <div className="flex flex-wrap justify-center gap-2 ">
-      {uniqueStack.map(stack => (
-        <button
-          key={stack.name}
-          className={
-            "flex justify-center items-center gap-0.5 rounded-full px-3 py-2 cursor-pointer transition-all duration-200 ease-in-out hover:scale-105 " +
-            (activeFilter === stack.name ? "bg-primary" : "bg-card ")
-          }
-          onClick={e => filterProjects(stack)}
-        >
-          <img
-            className="rounded size-5 filter brightness-0"
-            src={stack.icon}
-            alt={stack.name}
-          />
-          <p className="text-sm text-gray-900">{stack.name}</p>
-        </button>
-      ))}
+      {uniqueStack &&
+        uniqueStack.length > 1 &&
+        uniqueStack.map(stack => (
+          <button
+            key={stack.name}
+            className={
+              "flex justify-center items-center gap-0.5 rounded-full px-3 py-2 cursor-pointer transition-all duration-200 ease-in-out hover:scale-105 " +
+              (activeFilter === stack.name ? "bg-primary" : "bg-card ")
+            }
+            onClick={e => filterProjects(stack)}
+          >
+            <img
+              className="rounded size-5 filter brightness-0"
+              src={stack.icon}
+              alt={stack.name}
+            />
+            <p className="text-sm text-gray-900">{stack.name}</p>
+          </button>
+        ))}
       {activeFilter && (
         <button
           className="flex gap-0.5 rounded-full p-2 py-1 cursor-pointer bg-primary text-gray-900"

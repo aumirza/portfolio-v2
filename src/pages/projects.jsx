@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Layout } from "../components/Layout"
-import { ProjectGridCard } from "../components/ProjectGridCard"
+
 import { useProjectsQuery } from "../hooks/useProjectsQuery"
 import { Seo } from "../components/Seo"
-import ScrollAnimation from "react-animate-on-scroll"
-import { ProjectsFilter } from "../components/ProjectsFilter"
 import { FullSection } from "../components/layouts/FullSection"
+import { ProjectsGrid } from "../components/ProjectsGrid"
 
 const Projects = () => {
-  const [projects, setProjects] = useState([])
-  const projectsData = useProjectsQuery()
-
-  useEffect(() => {
-    if (!projectsData) return
-    setProjects(projectsData)
-  }, [])
+  const projectsDataCategorised = useProjectsQuery()
 
   return (
     <Layout className="pt-20">
@@ -25,25 +18,33 @@ const Projects = () => {
           </h1>
         </div>
 
-        <div className="max-w-lg mx-auto my-10">
-          <ProjectsFilter
-            projectsData={projectsData}
-            setProjects={setProjects}
-          />
-        </div>
-
-        <div className="grid max-w-6xl grid-cols-1 gap-10 mx-auto mb-10 md:grid-cols-2 lg:grid-cols-3 ">
-          {projects.map(edge => (
-            <ScrollAnimation
-              key={edge.project.id}
-              animateIn="fadeInUp"
-              animateOnce={true}
-              duration={1}
-            >
-              <ProjectGridCard project={edge.project.fields} />
-            </ScrollAnimation>
-          ))}
-        </div>
+        {projectsDataCategorised ? (
+          projectsDataCategorised.map(category => (
+            <div className="flex flex-col gap-5" key={category.name}>
+              {category.name.toLowerCase() !== "uncategorized" && (
+                <div className="flex flex-col items-center justify-center gap-1">
+                  {category.icon && (
+                    <img
+                      src={category.icon}
+                      alt={category.name}
+                      className="h-6"
+                    />
+                  )}
+                  <h2 className="text-2xl font-bold text-secondary dark:text-white">
+                    {category.name}
+                  </h2>
+                </div>
+              )}
+              <ProjectsGrid projectsData={category.projects} />
+            </div>
+          ))
+        ) : (
+          <div className="flex items-center justify-center">
+            <h1 className="text-2xl font-bold text-secondary dark:text-white">
+              No projects found
+            </h1>
+          </div>
+        )}
       </FullSection>
     </Layout>
   )
