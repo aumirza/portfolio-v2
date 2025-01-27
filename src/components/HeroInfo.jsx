@@ -54,7 +54,7 @@ export const HeroInfo = () => {
       <ScrollAnimation
         animateIn="fadeIn"
         animateOnce={true}
-        delay={800}
+        delay={650}
         duration={1}
       >
         <p className="max-w-[60ch] mt-2 leading-5">{description}</p>
@@ -62,7 +62,7 @@ export const HeroInfo = () => {
       <ScrollAnimation
         animateIn="fadeIn"
         animateOnce={true}
-        delay={1100}
+        delay={750}
         duration={1}
       >
         <div className="flex items-center mt-5">
