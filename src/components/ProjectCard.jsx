@@ -46,33 +46,44 @@ export const ProjectCard = ({ project, rtl, className }) => {
             <h1 className="z-20 text-2xl">{project.title}</h1>
             <div
               className={
-                "z-20 flex flex-col w-full p-5 my-3 rounded-md shadow-lg bg-primary text-secondary h-28 " +
-                (rtl ? "" : "md:items-end")
+                "z-20 flex w-full justify-between p-5 my-3 rounded-md shadow-lg bg-primary text-secondary h-28 " +
+                (rtl ? "" : "md:flex-row-reverse")
               }
             >
-              <p className="flex-grow">
-                {description && description.length > 150
-                  ? description.substring(0, 150) +
-                    " ... " +
-                    description.substring(
-                      description.length - 15,
-                      description.length
-                    )
-                  : description}
-              </p>
-              <div className="z-20 flex gap-2">
-                {project.techStack
-                  ? project.techStack.map((tech, i) => (
-                      <div className="px-1" key={i + tech.name}>
-                        <img
-                          className="size-5 brightness-0"
-                          src={tech.icon}
-                          alt=""
-                        />
-                      </div>
-                    ))
-                  : null}
+              <div className={"flex flex-col " + (rtl ? "" : "md:items-end")}>
+                <p className="flex-grow">
+                  {description && description.length > 150
+                    ? description.substring(0, 150) +
+                      " ... " +
+                      description.substring(
+                        description.length - 15,
+                        description.length
+                      )
+                    : description}
+                </p>
+                <div className="z-20 flex gap-2">
+                  {project.techStack
+                    ? project.techStack.map((tech, i) => (
+                        <div className="px-1" key={i + tech.name}>
+                          <img
+                            className="size-5 brightness-0"
+                            src={tech.icon}
+                            alt=""
+                          />
+                        </div>
+                      ))
+                    : null}
+                </div>
               </div>
+              {project.icon && (
+                <div className="">
+                  <img
+                    src={project.icon}
+                    alt={project.title}
+                    className="w-20 h-20 bg-white rounded-md"
+                  />
+                </div>
+              )}
             </div>
 
             <div className="z-20 flex justify-between w-1/6 mt-2">
