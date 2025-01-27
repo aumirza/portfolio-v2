@@ -8,9 +8,9 @@ export const ProjectGridCard = ({ project }) => {
   return (
     <div className="w-[22rem] h-[28rem] mx-auto p-5 gap-2  bg-card text-gray-950 rounded-xl shadow-md hover:-translate-y-3 hover:shadow-xl flex flex-col items-center transition-all ease-in-out duration-500">
       {/* <div className="z-20 group h-52 w-[98%] flex justify-center items-center hover:bg-transparent bg-secondary dark:bg-primary  overflow-hidden"> */}
-      <div className="z-20 flex items-center justify-center overflow-hidden group h-60 hover:bg-transparent">
+      <div className="z-20 flex items-center justify-center h-48 rounded overflow-clip group hover:bg-transparent">
         <img
-          className="object-cover h-full rounded-md mix-blend-multiply"
+          className="object-contain rounded overflow-clip mix-blend-multiply"
           // className="object-cover h-full rounded-md mix-blend-multiply group-hover:grayscale-0 group-hover:brightness-100 grayscale brightness-90"
           src={cover}
           alt={title}
