@@ -17,7 +17,7 @@ export const HeroSection = () => {
             animateIn="fadeIn"
             animateOnce={true}
             duration={1}
-            delay={1400}
+            delay={1000}
           >
             <SocialVertical />
           </ScrollAnimation>
@@ -32,7 +32,7 @@ export const HeroSection = () => {
         <ScrollAnimation
           offset={0}
           animateIn="bounceInUp"
-          delay={1800}
+          delay={1200}
           animateOnce={true}
           duration={1}
         >
