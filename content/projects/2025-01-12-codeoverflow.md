@@ -5,6 +5,7 @@ description: Your programming helper.
 cover: /img/codeoverflow.png
 url: https://codeoverflow.vercel.app/
 source: https://github.com/aumirza/codeoverflow
+category: Full Stack
 tech_stack:
   - Nextjs
   - Appwrite
