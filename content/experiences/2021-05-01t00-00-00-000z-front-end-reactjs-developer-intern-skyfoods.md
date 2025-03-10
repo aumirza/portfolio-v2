@@ -1,14 +1,14 @@
 ---
 position: " Full Stack Developer"
-institution: Freelancer
+postion: " Full Stack Developer"
+institution: Lifewise Medtech
 description: >-
-  * Engineered interactive chatbots to improve customer engagement and automate
-  tasks efficiently.
+  * Developed chatbots to boost customer engagement, automate tasks, and improve
+  interactions effectively.
 
-  * Created dynamic e-commerce platforms with secure payment integration and smooth user experiences.
+  * Developed a CRM platform for medical management and scheduling for improved efficiency
 
-  * Handled full stack responsibilities, ensuring cohesive functionality across both frontend and backend
-     components.
-started: 2023-06-01T00:00:00.000Z
+  * **Techs worked with:** *Nodejs , Express, Postgres, ReactJs, NextJs,  Rest api.*
+started: 2023-08-01T05:30:00.000Z
 ended: ""
 ---
