@@ -5,6 +5,7 @@ description: Coming soon page with timer.
 cover: /img/coming-soon.png
 url: http://gh.ahmadullah.in/coming-soon-page-react/
 source: https://github.com/aumirza/coming-soon-page-react
+category: Front-end
 tech_stack:
   - React
 featured: false
