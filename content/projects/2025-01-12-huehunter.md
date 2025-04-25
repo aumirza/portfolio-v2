@@ -6,6 +6,7 @@ description: sleek and intuitive tool to extract and explore colors from any
 cover: /img/huehunter-demo.png
 url: https://gh.ahmadullah.in/image-color-picker/
 source: https://github.com/aumirza/image-color-picker
+category: Front-end
 tech_stack:
   - React
 featured: false
