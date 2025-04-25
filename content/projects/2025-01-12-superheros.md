@@ -5,6 +5,7 @@ description: All marvel character assembled.
 cover: /img/superheroes.png
 url: https://gh.ahmadullah.in/superheros/
 source: https://github.com/aumirza/superheros
+category: Front-end
 tech_stack:
   - React
 featured: false
