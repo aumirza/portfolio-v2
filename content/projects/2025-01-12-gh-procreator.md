@@ -5,6 +5,7 @@ description: GitHub profile readme generator.
 cover: /img/gh-procreator-dark.png
 url: https://gh.ahmadullah.in/gh-procreator/
 source: https://github.com/aumirza/gh-procreator
+category: Full Stack
 tech_stack:
   - React
   - Tailwindcss
