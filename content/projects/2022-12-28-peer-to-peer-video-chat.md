@@ -9,6 +9,7 @@ description: Experience the convenience and intimacy of peer-to-peer video chat
 cover: https://images.ctfassets.net/vvuz0qpcznq0/54mKARwKbY3FMTpImfTWbz/d4c1a3ca550e43178cf7924981db2efb/Best-Video-Chat-Apps.jpg
 url: https://gh.ahmadullah.in/webrtc-videochat/
 source: https://github.com/aumirza/webrtc-videochat
+category: Full Stack
 tech_stack:
   - React
 featured: false
