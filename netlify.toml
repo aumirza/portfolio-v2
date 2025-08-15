@@ -3,7 +3,7 @@
     command = "gatsby build"
 
     [build.environment]
-    NODE_VERSION = "^22.18.0"
+    NODE_VERSION = "22.18.0"
 
 [dev]
     command = "gatsby develop"
@@ -11,4 +11,4 @@
     live-reload-port = 8001
 
     [dev.environment]
-    NODE_VERSION = "^22.18.0"
+    NODE_VERSION = "22.18.0"
